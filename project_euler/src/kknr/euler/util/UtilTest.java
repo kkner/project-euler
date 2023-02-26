@@ -67,4 +67,10 @@ public class UtilTest
 		assertEquals(4, Util.gcd(12, -20) );
 		assertEquals(4, Util.gcd(-12, -20) );
 	}
+
+	@Test
+	public void pyramidal() {
+		assertEquals(1+4+9, Util.pyramidal(3));
+		assertEquals(1+4+9+16, Util.pyramidal(4));
+	}
 }

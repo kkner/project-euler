@@ -103,4 +103,14 @@ public class Util
 		}
 		return Math.abs(a);
 	}	
+	
+	/**
+	 * Calculates the nth square pyramidal number.
+	 * @param n
+	 * @return
+	 */
+	public static long pyramidal(int n)
+	{
+		return n * (n + 1) * (2 * n + 1) / 6;
+	}	
 }

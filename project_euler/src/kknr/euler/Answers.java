@@ -23,4 +23,9 @@ public class Answers
 	static final int E05_PRM = 20;
 	static final int E05_ANS_TOY = 2520;
 	static final int E05_ANS = 232792560;
+
+	static final int E06_PRM_TOY = 10;
+	static final int E06_PRM = 100;
+	static final int E06_ANS_TOY = 2640;
+	static final int E06_ANS = 25164150;
 }
