@@ -50,7 +50,6 @@ public class FibTest
 		// Calls to curr after exception
 		assertEquals(F[F.length - 1], f.curr());
 		assertEquals(F[F.length - 1], f.curr());
-
 	}
 	
 	static final long[] F = 
