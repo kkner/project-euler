@@ -12,27 +12,21 @@ public class FibBTest
 	void test()
 	{
 		FibB f = new FibB();
-
-		// Query start value.
-		assertEquals(Util.B1, f.curr());
-
-		// Query start value again.
-		assertEquals(Util.B1, f.curr());		
-
-		for(int i = 1; i < FibTest.F.length; i++) 
+		
+		for(int i = 0; i < FibTest.F.length; i++) 
 		{
 			assertEquals(true, f.has());
-			assertEquals(Util.B(FibTest.F[i]), f.curr());
-			assertEquals(Util.B(FibTest.F[i]), f.curr());
 			assertEquals(Util.B(FibTest.F[i]), f.adv());
+			assertEquals(Util.B(FibTest.F[i]), f.curr());
+			assertEquals(Util.B(FibTest.F[i]), f.curr());
 		}
 		
 		for(int i = 0; i < next10.length; i++) 
 		{
 			assertEquals(true, f.has());
-			assertEquals(next10[i], f.curr());
-			assertEquals(next10[i], f.curr());
 			assertEquals(next10[i], f.adv());
+			assertEquals(next10[i], f.curr());
+			assertEquals(next10[i], f.curr());
 		}
 	}
 	

@@ -14,25 +14,19 @@ public class FibTest
 	{
 		Fib f = new Fib();
 
-		// Query start value.
-		assertEquals(1, f.curr());
-
-		// Query start value again.
-		assertEquals(1, f.curr());
-		
 		// Control array index.
-		int expIndex = 1;
+		int expIndex = 0;
 		
 		while(f.has())
 		{
+			// Advance and query the new value.
+			assertEquals(F[expIndex], f.adv());
+
 			// Query current value.
 			assertEquals(F[expIndex], f.curr());
 
 			// Query current value again.
 			assertEquals(F[expIndex], f.curr());
-			
-			// Query current value and advance.
-			assertEquals(F[expIndex], f.adv());
 			
 			// Advance control array index.
 			expIndex++;
@@ -46,6 +40,7 @@ public class FibTest
 		assertEquals(F[F.length - 1], f.curr());
 		
 		assertThrows(NoSuchElementException.class, () -> f.adv() );
+		assertThrows(NoSuchElementException.class, () -> f.adv() );
 
 		// Calls to curr after exception
 		assertEquals(F[F.length - 1], f.curr());
@@ -54,6 +49,7 @@ public class FibTest
 	
 	static final long[] F = 
 	{
+		0,
 		1,
 		1,
 		2,

@@ -18,7 +18,10 @@ public class E02B extends Solution
 	{
 		int sum = 0;	
 		
-		for(Fib fib = new Fib(); fib.curr() < LIMIT; fib.adv())
+		Fib fib = new Fib();
+		fib.adv();
+		
+		for(; fib.curr() < LIMIT; fib.adv())
 		{
 			if (Util.isEven(fib.curr()))
 			{
