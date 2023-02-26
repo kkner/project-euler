@@ -10,8 +10,10 @@ public class E10 extends Solution
 
 	public long solve(int lim)
 	{
+		// Inclusive.
 		int maxPrime = lim - 1;
 		
+		// Allows maxPrime to be marked.
 		boolean notPrime[] = new boolean[maxPrime + 1];
 		
 		long sum = 0;
@@ -29,14 +31,16 @@ public class E10 extends Solution
 			// Only start if p * p <= maxPrime.
 			// Condition equivalent to p <= maxPrime / p.
 			if (p > maxPrime / p) 
+			{
 				continue;
+			}
 			
-			for(int i = p * p; i < notPrime.length; i += p) 
+			for(int i = p * p; i < notPrime.length; i += p)
+			{
 				notPrime[i] = true;
+			}
 		}
 		
 		return sum;
 	}
-
-
 }

@@ -22,6 +22,7 @@ import kknr.euler.e000.E08;
 import kknr.euler.e000.E08B;
 import kknr.euler.e000.E09;
 import kknr.euler.e010.E10;
+import kknr.euler.e010.E10B;
 import kknr.euler.util.Util;
 
 class EulerTests 
@@ -129,5 +130,10 @@ class EulerTests
 	@Test
 	public void e10() {
 		assertEquals(E10_ANS, new E10(false).solve(E10_PRM));
+	}
+
+	@Test
+	public void e10B() {
+		assertEquals(E10_ANS, new E10B(false).solve(E10_PRM));
 	}
 }
