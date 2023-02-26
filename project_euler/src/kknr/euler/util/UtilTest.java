@@ -111,5 +111,21 @@ public class UtilTest
 		li.add(7);
 		
 		assertArrayEquals(new int[] {5, 8, 7}, Util.toArray(li));
-	}	
+	}
+	
+
+	@Test
+	public void ipowBrute() {
+		assertEquals(8, Util.ipowBrute(2, 3));
+		assertEquals(1024, Util.ipowBrute(4, 5));
+		assertEquals(96889010407L, Util.ipowBrute(7, 13));
+	}
+	
+	@Test
+	public void ipow() {
+		assertEquals(8, Util.ipow(2, 3));
+		assertEquals(1024, Util.ipow(4, 5));
+		assertEquals(96889010407L, Util.ipow(7, 13));
+	}
+	
 }

@@ -1,7 +1,9 @@
 package kknr.euler.util;
 
 import java.math.BigInteger;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Util 
 {
@@ -166,5 +168,85 @@ public class Util
 		}
 		
 		return arr;
+	}
+	
+	/**
+	 * Calculates base ^ power.
+	 * Uses bits in the binary representation of count. 
+	 * @param base
+	 * @param count
+	 * @return
+	 */
+	public static long ipow(long base, int count) 
+	{		
+		// If base=3, values of base will become 3,9,81,6561,... 
+		long result = 1;
+		
+		for(; count > 0; count >>>= 1) 
+		{
+			// Next bit of count from right * current power
+			if ((count & 1) == 1)
+			{
+				result *= base;
+			}
+			
+			base *= base;
+		}	
+		
+		return result;
+	}
+
+	/**
+	 * Calculates base ^ power. 
+	 * Brute force loop. 
+	 * @param base
+	 * @param power
+	 * @return
+	 */
+	public static long ipowBrute(long base, int power)
+	{
+		long result = 1L;
+		
+		for(int i = 0; i < power; i++) 
+		{
+			result *= base;
+		}
+		
+		return result;
+	}
+	
+    // TODO add comment
+	public static int sumOfProperDivisors(int n)
+	{		
+		return sumOfProperDivisors(n, new Fac(n));
+	}
+
+    // TODO add test
+    // TODO add comment
+	public static int sumOfProperDivisors(int n, ISeq<Long> f)
+	{	
+		Map<Integer, Integer> counts = new HashMap<Integer, Integer>();
+		
+		while(f.has())
+		{
+			int p = (int)(long)f.adv();
+			Integer count = counts.get(p);
+			count = count == null ? 0 : count;
+			counts.put(p, count + 1);
+		}
+		
+		int result = 1;
+		
+		for(Map.Entry<Integer, Integer> e: counts.entrySet()) 
+		{
+			int prime = e.getKey();
+			int count = e.getValue();
+			result *= ipow(prime, count + 1) - 1;
+			result /= prime - 1;
+		}
+		
+		result -= n;
+		
+		return result;		
 	}	
 }
