@@ -1,6 +1,7 @@
 package kknr.euler.util;
 
 import java.math.BigInteger;
+import java.util.List;
 
 public class Util 
 {
@@ -147,4 +148,23 @@ public class Util
 		
 		return (long)Math.ceil(upper);		
 	}
+
+	/**
+	 * Convert list of ints to array of ints.
+	 * @param li Input list of ints.
+	 * @return Array containing same ints.
+	 */
+	public static int[] toArray(List<Integer> li)
+	{
+		int[] arr = new int[li.size()];
+		
+		int index = 0;
+		
+		for(int e: li) 
+		{
+			arr[index++] = e;
+		}
+		
+		return arr;
+	}	
 }

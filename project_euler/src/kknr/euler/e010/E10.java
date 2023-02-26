@@ -25,9 +25,9 @@ public class E10 extends Solution
 			sum += p;
 			
 			// Mark all multiples.
-			// Multiples < p*p are already marked.
-			// Only start if p*p <= maxPrime.
-			// Condition equivalent to p <= maxPrime/p.
+			// Multiples < p * p are already marked.
+			// Only start if p * p <= maxPrime.
+			// Condition equivalent to p <= maxPrime / p.
 			if (p > maxPrime / p) 
 				continue;
 			

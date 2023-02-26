@@ -1,8 +1,12 @@
 package kknr.euler.util;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
@@ -96,4 +100,16 @@ public class UtilTest
 		assertTrue(Util.sieveSizeUpperLimit(8) >= 19);
 		assertTrue(Util.sieveSizeUpperLimit(100) >= 541);
 	}
+	
+	@Test
+	public void toArrayInt()
+	{
+		List<Integer> li = new ArrayList<Integer>();
+		
+		li.add(5);
+		li.add(8);
+		li.add(7);
+		
+		assertArrayEquals(new int[] {5, 8, 7}, Util.toArray(li));
+	}	
 }
