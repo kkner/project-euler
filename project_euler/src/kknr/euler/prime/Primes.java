@@ -6,9 +6,6 @@ import java.util.List;
 
 public class Primes 
 {	
-	// TODO Look this up, it may be defined somewhere.
-	public static final long MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
-	
 	/**
 	 * Produce a prime number sieve where non-primes are marked as true.
 	 * 
@@ -34,13 +31,14 @@ public class Primes
 		// Condition equivalent to p <= maxPrime / p.
 		for (int p = 2; p <= maxPrime / p; p++) 
 		{
-			// Mark multiples if p is prime.
+			// If p is prime,
 			if (!sieve[p])
 			{
 				// Mark all multiples.
 				// Multiples < p * p are already marked.
-				for (int k = p * p - p; k <= maxPrime - p; ) {
-					k += p;
+				for (int k = p * p; k <= maxPrime; k += p) 
+				{
+					// Mark as non-prime.
 					sieve[k] = true;					
 				}
 			}
@@ -60,6 +58,7 @@ public class Primes
 		// Handle 2 separately.
 		li.add(2);
 		
+		// For all odd numbers >= 3.
 		for (int i = 3; i <= maxPrime; i += 2)
 		{
 			// If prime,
@@ -71,5 +70,8 @@ public class Primes
 		}
 		
 		return li;
-	}	
+	}
+	
+	// TODO Look this up, it may be defined somewhere.
+	public static final long MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
 }
