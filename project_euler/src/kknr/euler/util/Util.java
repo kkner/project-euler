@@ -8,7 +8,7 @@ public class Util
 	public static final BigInteger B1 = BigInteger.ONE;
 	public static final BigInteger B2 = BigInteger.valueOf(2);
 
-	private static final long TRIANGULAR_MAX_N = (long)Math.sqrt(Long.MAX_VALUE); 
+	public static final long TRIANGULAR_MAX_N = (long)Math.sqrt(Long.MAX_VALUE); 
 
 	/**
 	 * Construct a BigInteger from a long.
@@ -30,7 +30,7 @@ public class Util
 		return n * (n + 1) / 2;
 	}
 
-	private static final long TRIANGULAR2_MAX_N = (long)Math.sqrt(Long.MAX_VALUE * 2.0) - 1L;
+	public static final long TRIANGULAR2_MAX_N = (long)Math.sqrt(Long.MAX_VALUE * 2.0) - 1L;
 
 	/**
 	 * Calculates the nth triangular number.
