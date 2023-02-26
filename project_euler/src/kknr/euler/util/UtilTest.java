@@ -73,4 +73,18 @@ public class UtilTest
 		assertEquals(1+4+9, Util.pyramidal(3));
 		assertEquals(1+4+9+16, Util.pyramidal(4));
 	}
+	
+	@Test
+	public void sieveSizeUpperLimit() {
+		// 2 3 5 7 11 13 17 19
+		assertTrue(Util.sieveSizeUpperLimit(1) >= 2);
+		assertTrue(Util.sieveSizeUpperLimit(2) >= 3);
+		assertTrue(Util.sieveSizeUpperLimit(3) >= 5);
+		assertTrue(Util.sieveSizeUpperLimit(4) >= 7);
+		assertTrue(Util.sieveSizeUpperLimit(5) >= 11);
+		assertTrue(Util.sieveSizeUpperLimit(6) >= 13);
+		assertTrue(Util.sieveSizeUpperLimit(7) >= 17);
+		assertTrue(Util.sieveSizeUpperLimit(8) >= 19);
+		assertTrue(Util.sieveSizeUpperLimit(100) >= 541);
+	}
 }

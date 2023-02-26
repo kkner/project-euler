@@ -113,4 +113,38 @@ public class Util
 	{
 		return n * (n + 1) * (2 * n + 1) / 6;
 	}	
+
+    // TODO add test
+	/**
+	 * Given a prime count n, calculate an integer guaranteed 
+	 * to be greater than the nth prime.
+	 * 
+	 * @param n Prime count. Must be >= 6.
+	 * @return An integer guaranteed to be > nth prime.
+	 */
+	public static long sieveSizeUpperLimit(long n)
+	{		
+		//https://en.wikipedia.org/wiki/Prime-counting_function#Inequalities
+		//Here are some inequalities for the nth prime, pn.
+		//The left inequality holds for n ≥ 2 and the right inequality holds for n ≥ 6.
+		
+		assert n > 0;
+
+		if (n < 6) 
+		{
+			// Fixed values.
+			switch((int)n)
+			{
+				case 1: return 2;
+				case 2: return 3;
+				case 3: return 5;
+				case 4: return 7;
+				case 5: return 11;
+			}
+		}
+		
+		double upper = n * Math.log(n * Math.log(n));
+		
+		return (long)Math.ceil(upper);		
+	}
 }
