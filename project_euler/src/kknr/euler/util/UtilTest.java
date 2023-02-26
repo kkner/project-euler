@@ -44,4 +44,13 @@ public class UtilTest
 		assertEquals(false, Util.isOdd(2));
 		assertEquals(true, Util.isOdd(3));
 	}
+
+	@Test
+	public void isPalindrome() {
+		assertEquals(true, Util.isPalindrome(0));
+		assertEquals(true, Util.isPalindrome(1));
+		assertEquals(true, Util.isPalindrome(12321));
+		assertEquals(false, Util.isPalindrome(12322));		
+		assertEquals(false, Util.isPalindrome(1232));
+	}
 }

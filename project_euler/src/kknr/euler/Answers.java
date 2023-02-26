@@ -13,4 +13,9 @@ public class Answers
 	static final int E03_ANS_TOY = 29;
 	static final long E03_PRM = 600851475143L;
 	static final int E03_ANS = 6857;
+	
+	static final int E04_PRM_TOY = 10;
+	static final int E04_ANS_TOY = 9009;
+	static final int E04_PRM = 100; // Default lo value for 3 digits.
+	static final int E04_ANS = 906609;
 }

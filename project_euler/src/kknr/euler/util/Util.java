@@ -67,4 +67,27 @@ public class Util
 	public static boolean isOdd(long x) {
 		 return x % 2L != 0L;
 	}	
+
+	/**
+	 * Is the number a palindrome?
+	 * @param p
+	 * @return
+	 */	
+	public static boolean isPalindrome(long p)
+	{
+		assert p >= 0;
+		
+		// The reconstructed number.		
+		long r = 0; 
+
+		// Remove digits from p one by one.
+		for(long t = p; t > 0; t /= 10L)
+		{
+			// Concatenate last digit of t to the end of r. 
+			r = r * 10L + t % 10L;
+		}
+		
+		// Is the reconstructed number same as p?
+		return r == p;
+	}
 }
