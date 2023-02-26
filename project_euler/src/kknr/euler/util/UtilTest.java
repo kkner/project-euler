@@ -53,4 +53,18 @@ public class UtilTest
 		assertEquals(false, Util.isPalindrome(12322));		
 		assertEquals(false, Util.isPalindrome(1232));
 	}
+
+	@Test
+	public void gcd()
+	{
+		assertEquals(4, Util.gcd(20, 12) );
+		assertEquals(4, Util.gcd(-20, 12) );
+		assertEquals(4, Util.gcd(20, -12) );
+		assertEquals(4, Util.gcd(-20, -12) );
+		
+		assertEquals(4, Util.gcd(12, 20) );		
+		assertEquals(4, Util.gcd(-12, 20) );
+		assertEquals(4, Util.gcd(12, -20) );
+		assertEquals(4, Util.gcd(-12, -20) );
+	}
 }

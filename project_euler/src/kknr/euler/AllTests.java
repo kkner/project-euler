@@ -16,4 +16,3 @@ import kknr.euler.util2.FibTest;
 	})
 public class AllTests {
 }
-

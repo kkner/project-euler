@@ -90,4 +90,17 @@ public class Util
 		// Is the reconstructed number same as p?
 		return r == p;
 	}
+	
+	/**
+	 * Euclid's algorithm.
+	 */
+	public static long gcd(long a, long b)
+	{	
+		while(b != 0) {
+			long rem = a % b;
+			a = b;
+			b = rem;
+		}
+		return Math.abs(a);
+	}	
 }
