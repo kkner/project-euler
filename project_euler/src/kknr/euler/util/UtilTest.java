@@ -2,6 +2,8 @@ package kknr.euler.util;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.NoSuchElementException;
+
 import org.junit.jupiter.api.Test;
 
 public class UtilTest 
@@ -13,14 +15,21 @@ public class UtilTest
 		assertEquals(15, Util.triangular(5));
 		assertEquals(15, Util.triangular(5));
 		assertEquals(0, Util.triangular(0));
-		assertEquals(4611686016981624750L, Util.triangular( (long)Math.sqrt(Long.MAX_VALUE) ) );
+		assertEquals(4611686016981624750L, Util.triangular( Util.TRIANGULAR_MAX_N ) );
+
+		assertThrows(AssertionError.class, () -> Util.triangular(-1) );
+		assertThrows(AssertionError.class, () -> Util.triangular(Util.TRIANGULAR_MAX_N + 1) );
 	}
 
 	@Test
 	public void triangular2() {
 		assertEquals(15, Util.triangular2(5));
 		assertEquals(0, Util.triangular2(0));
-		assertEquals(9223372034707292160L, Util.triangular2( (long)Math.sqrt(Long.MAX_VALUE * 2.0) - 1 ) );
+		assertEquals(9223372034707292160L, Util.triangular2(Util.TRIANGULAR2_MAX_N));
+		
+		assertThrows(AssertionError.class, () -> Util.triangular2(-1) );
+		assertThrows(AssertionError.class, () -> Util.triangular2(Util.TRIANGULAR2_MAX_N + 1) );
+		
 	}
 	
 	@Test

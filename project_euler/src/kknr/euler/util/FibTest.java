@@ -45,7 +45,7 @@ public class FibTest
 		assertEquals(F[F.length - 1], f.curr());
 		assertEquals(F[F.length - 1], f.curr());
 		
-		Assertions.assertThrows(NoSuchElementException.class, () -> f.adv() );
+		assertThrows(NoSuchElementException.class, () -> f.adv() );
 
 		// Calls to curr after exception
 		assertEquals(F[F.length - 1], f.curr());
