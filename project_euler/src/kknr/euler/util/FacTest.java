@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 
 import org.junit.jupiter.api.Test;
 
-class FacTest
+public class FacTest
 {
 	@Test
 	void test() 
