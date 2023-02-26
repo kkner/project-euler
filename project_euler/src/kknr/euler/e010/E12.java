@@ -117,7 +117,7 @@ public class E12 extends Solution
 			}
 		}
 		
-		// The last candidate wasn't evaluated.
+		// Evaluate the last candidate.
 		prod *= count;
 		
 		return prod;
