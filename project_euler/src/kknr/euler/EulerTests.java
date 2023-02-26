@@ -23,6 +23,10 @@ import kknr.euler.e000.E08B;
 import kknr.euler.e000.E09;
 import kknr.euler.e010.E10;
 import kknr.euler.e010.E10B;
+import kknr.euler.e010.E11;
+import kknr.euler.e010.E11Brute;
+import kknr.euler.e010.E11Data;
+import kknr.euler.e010.E11Read;
 import kknr.euler.util.Util;
 
 class EulerTests 
@@ -136,4 +140,28 @@ class EulerTests
 	public void e10B() {
 		assertEquals(E10_ANS, new E10B(false).solve(E10_PRM));
 	}
+	
+	@Test
+	public void e11ReadItem() {
+		assertEquals(15, E11Read.readItem(E11Data.LINES, 0, 5));
+		assertEquals(81, E11Read.readItem(E11Data.LINES, 1, 5));
+		assertEquals(14, E11Read.readItem(E11Data.LINES, 2, 6));
+	}
+
+	@Test
+	public void e11ReadDigit() {
+		assertEquals(1, E11Read.readDigit("123", 0));
+		assertEquals(2, E11Read.readDigit("123", 1));
+		assertEquals(3, E11Read.readDigit("123", 2));
+	}
+
+	@Test
+	public void e11() {
+		assertEquals(E11_ANS, new E11(false).solve(E11_PRM));
+	}	
+
+	@Test
+	public void e11Brute() {
+		assertEquals(E11_ANS, new E11Brute(false).solve(E11_PRM));
+	}	
 }

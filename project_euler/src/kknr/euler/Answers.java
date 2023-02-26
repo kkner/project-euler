@@ -40,4 +40,7 @@ public class Answers
 
 	static final int E10_PRM = 2000_000;
 	static final long E10_ANS = 142913828922L;	
+
+	static final int E11_PRM = 4;
+	static final int E11_ANS = 70600674;
 }
