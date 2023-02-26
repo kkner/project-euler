@@ -7,6 +7,10 @@ import org.junit.jupiter.api.Test;
 
 import kknr.euler.e000.E01;
 import kknr.euler.e000.E01B;
+import kknr.euler.e000.E02;
+import kknr.euler.e000.E02B;
+import kknr.euler.e000.E03;
+import kknr.euler.e000.E03B;
 import kknr.euler.util.Util;
 
 class EulerTests 
@@ -29,6 +33,27 @@ class EulerTests
 	public void e01b() {
 		assertEquals(E01_ANS_TOY, new E01B(false).solve(E01_PRM_TOY));
 		assertEquals(E01_ANS, new E01B(false).solve(E01_PRM));
-	}	
-}
+	}
 
+	@Test
+	public void e02() {
+		assertEquals(E02_ANS, new E02(false).solve());
+	}
+	
+	@Test
+	public void e02B() {
+		assertEquals(E02_ANS, new E02B(false).solve());
+	}
+
+	@Test
+	public void e03() {
+		assertEquals(E03_ANS_TOY, new E03(false).solve(E03_PRM_TOY));
+		assertEquals(E03_ANS, new E03(false).solve(E03_PRM));
+	}
+
+	@Test
+	public void e03B() {
+		assertEquals(E03_ANS_TOY, new E03B(false).solve(E03_PRM_TOY));
+		assertEquals(E03_ANS, new E03B(false).solve(E03_PRM));
+	}
+}
