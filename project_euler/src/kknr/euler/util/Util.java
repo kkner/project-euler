@@ -1,6 +1,7 @@
 package kknr.euler.util;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -150,6 +151,20 @@ public class Util
 		
 		return (long)Math.ceil(upper);		
 	}
+	
+    // TODO add test
+    // TODO add comment
+	public static List<Integer> asList(int[] selected)
+	{
+		List<Integer> dst = new ArrayList<Integer>();
+		
+		for(int e: selected)
+		{
+			dst.add(e);
+		}
+		
+		return dst;
+	}
 
 	/**
 	 * Convert list of ints to array of ints.
@@ -218,7 +233,15 @@ public class Util
     // TODO add comment
 	public static int sumOfProperDivisors(int n)
 	{		
-		return sumOfProperDivisors(n, new Fac(n));
+		return sumOfProperDivisors(n, new FactorsFixed(n));
+	}
+	
+    // TODO add test
+    // TODO add comment
+	public static int sumOfProperDivisors(int n, List<Integer> primes)
+	{		
+		//return sumOfProperDivisors(n, new FactorsPList(n, primes));
+		return sumOfProperDivisors(n, new Factors(n, new SeqList<>(primes)));
 	}
 
     // TODO add test

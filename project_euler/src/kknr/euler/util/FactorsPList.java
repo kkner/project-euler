@@ -1,17 +1,17 @@
 package kknr.euler.util;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 
-public class Fac implements ISeq<Long> 
+public class FactorsPList implements ISeq<Long> 
 {
-	private long x;
-	private long cand;
-	
-	public Fac(long x) 
+	public FactorsPList(long x, List<Integer> primes) 
 	{
 		this.x = x;
 		this.cand = 0;		
+		this.primes = primes;
+		this.primeInd = -1;
 	}
 	
 	@Override
@@ -23,7 +23,7 @@ public class Fac implements ISeq<Long>
 	@Override
 	public Long curr() 
 	{
-		if (cand == 0)
+		if (primeInd == -1)
 		{
 			throw new NoSuchElementException();
 		}
@@ -38,9 +38,9 @@ public class Fac implements ISeq<Long>
 			throw new NoSuchElementException();
 		}
 		
-		if (cand == 0)
+		if (primeInd == -1)
 		{
-			cand = 2;
+			cand = primes.get(++primeInd);
 		}
 		
 		while(x > 1) // While not depleted,
@@ -65,8 +65,8 @@ public class Fac implements ISeq<Long>
 				}
 				else // cand < sqrt(current x)
 				{
-					// Try the next number in the sequence: 2, 3, 5, 7, 9...
-					cand += (cand & 1) + 1; 
+					//cand += (cand & 1) + 1;
+					cand = primes.get(++primeInd);
 				}				
 			}
 		}		
@@ -74,5 +74,10 @@ public class Fac implements ISeq<Long>
 		return cand;
 	}
 	
+	private long x;
+	private long cand;
+	private int primeInd;
+	
+	private List<Integer> primes;
 	
 }

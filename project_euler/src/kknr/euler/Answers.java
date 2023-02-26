@@ -55,4 +55,5 @@ public class Answers
 	static final int E20_ANS = 648;
 	static final int E21_ANS = 31626;
 	static final int E22_ANS = 871198282;
+	static final int E23_ANS = 4179871;
 }

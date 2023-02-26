@@ -1,6 +1,6 @@
 package kknr.euler.e010;
 
-import kknr.euler.util.Fac;
+import kknr.euler.util.FactorsFixed;
 
 /**
  * Inherits solve from E12, changes divisorCount method.
@@ -21,7 +21,7 @@ public class E12B extends E12
 		// Counter for same prime factors. 
 		int counter = 0;		
 		
-		for(Fac fac = new Fac(x); fac.has(); counter++) 
+		for(FactorsFixed fac = new FactorsFixed(x); fac.has(); counter++) 
 		{
 			int p = (int)(long)fac.adv();
 			
