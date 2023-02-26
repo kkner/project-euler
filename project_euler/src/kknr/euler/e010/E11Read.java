@@ -1,7 +1,7 @@
 package kknr.euler.e010;
 
-public class E11Read {
-
+public class E11Read
+{
 	/**
 	 * Read character at given row and column.
 	 * @param lines
@@ -37,5 +37,4 @@ public class E11Read {
 		
 		return d;
 	}
-
 }

@@ -2,7 +2,8 @@ package kknr.euler.e010.e17;
 
 public class ComposerStr extends IComposer
 {
-	public ComposerStr() {
+	public ComposerStr()
+	{
 		reset();
 	}
 	

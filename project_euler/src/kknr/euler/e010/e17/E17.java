@@ -52,8 +52,15 @@ public class E17 extends Solution
 			else 
 			{
 				int tens = rest / 10, ones = rest % 10;
-				if (tens > 0)  sb.append(Names.TENS[tens]);					
-				if (ones > 0) sb.append(Names.ONES[ones]);
+				
+				if (tens > 0) 
+				{
+					sb.append(Names.TENS[tens]);					
+				}
+				if (ones > 0)
+				{
+					sb.append(Names.ONES[ones]);
+				}
 			}
 		}
 		
