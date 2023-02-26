@@ -1,4 +1,4 @@
-package kknr.euler.util2;
+package kknr.euler.util;
 
 import static org.junit.jupiter.api.Assertions.*;
 

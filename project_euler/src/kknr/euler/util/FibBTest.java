@@ -1,12 +1,10 @@
-package kknr.euler.util2;
+package kknr.euler.util;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.math.BigInteger;
 
 import org.junit.jupiter.api.Test;
-
-import kknr.euler.util.Util;
 
 public class FibBTest
 {

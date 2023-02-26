@@ -1,8 +1,6 @@
-package kknr.euler.util2;
+package kknr.euler.util;
 
 import java.math.BigInteger;
-
-import kknr.euler.util.Util;
 
 public class FibB implements ISeq<BigInteger> 
 {

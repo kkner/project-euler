@@ -1,4 +1,4 @@
-package kknr.euler.util2;
+package kknr.euler.util;
 
 public class Fib implements ISeq<Long> 
 {

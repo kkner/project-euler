@@ -1,8 +1,8 @@
 package kknr.euler.e000;
 
 import kknr.euler.Solution;
+import kknr.euler.util.Fib;
 import kknr.euler.util.Util;
-import kknr.euler.util2.Fib;
 
 /**
  * Brute force.
