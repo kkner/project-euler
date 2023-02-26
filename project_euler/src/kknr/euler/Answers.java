@@ -35,4 +35,9 @@ public class Answers
 	static final int E08_PRM = 13;
 	static final long E08_ANS_TOY = 5832;
 	static final long E08_ANS = 23514624000L;
+
+	static final int E09_ANS = 31875000;
+
+	static final int E10_PRM = 2000_000;
+	static final long E10_ANS = 142913828922L;	
 }
