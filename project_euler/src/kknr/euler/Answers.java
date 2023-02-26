@@ -51,4 +51,5 @@ public class Answers
 	static final int E16_ANS = 1366;
 	static final int E17_ANS = 21124;
 	static final int E18_ANS = 1074;
+	static final int E19_ANS = 171;
 }
