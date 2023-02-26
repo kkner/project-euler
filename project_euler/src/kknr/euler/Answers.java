@@ -43,4 +43,6 @@ public class Answers
 
 	static final int E11_PRM = 4;
 	static final int E11_ANS = 70600674;
+
+	static final int E12_ANS = 76576500;
 }

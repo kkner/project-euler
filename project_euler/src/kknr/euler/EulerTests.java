@@ -1,6 +1,37 @@
 package kknr.euler;
 
-import static kknr.euler.Answers.*;
+import static kknr.euler.Answers.E01_ANS;
+import static kknr.euler.Answers.E01_ANS_TOY;
+import static kknr.euler.Answers.E01_PRM;
+import static kknr.euler.Answers.E01_PRM_TOY;
+import static kknr.euler.Answers.E02_ANS;
+import static kknr.euler.Answers.E03_ANS;
+import static kknr.euler.Answers.E03_ANS_TOY;
+import static kknr.euler.Answers.E03_PRM;
+import static kknr.euler.Answers.E03_PRM_TOY;
+import static kknr.euler.Answers.E04_ANS;
+import static kknr.euler.Answers.E04_ANS_TOY;
+import static kknr.euler.Answers.E04_PRM;
+import static kknr.euler.Answers.E04_PRM_TOY;
+import static kknr.euler.Answers.E05_ANS;
+import static kknr.euler.Answers.E05_ANS_TOY;
+import static kknr.euler.Answers.E05_PRM;
+import static kknr.euler.Answers.E05_PRM_TOY;
+import static kknr.euler.Answers.E06_ANS;
+import static kknr.euler.Answers.E06_ANS_TOY;
+import static kknr.euler.Answers.E06_PRM;
+import static kknr.euler.Answers.E06_PRM_TOY;
+import static kknr.euler.Answers.E07_ANS;
+import static kknr.euler.Answers.E08_ANS;
+import static kknr.euler.Answers.E08_ANS_TOY;
+import static kknr.euler.Answers.E08_PRM;
+import static kknr.euler.Answers.E08_TOY_PRM;
+import static kknr.euler.Answers.E09_ANS;
+import static kknr.euler.Answers.E10_ANS;
+import static kknr.euler.Answers.E10_PRM;
+import static kknr.euler.Answers.E11_ANS;
+import static kknr.euler.Answers.E11_PRM;
+import static kknr.euler.Answers.E12_ANS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -27,6 +58,7 @@ import kknr.euler.e010.E11;
 import kknr.euler.e010.E11Brute;
 import kknr.euler.e010.E11Data;
 import kknr.euler.e010.E11Read;
+import kknr.euler.e010.E12;
 import kknr.euler.util.Util;
 
 class EulerTests 
@@ -164,4 +196,9 @@ class EulerTests
 	public void e11Brute() {
 		assertEquals(E11_ANS, new E11Brute(false).solve(E11_PRM));
 	}	
+	
+	@Test
+	public void e12() {
+		assertEquals(E12_ANS, new E12(false).solve());
+	}
 }
