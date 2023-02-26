@@ -70,9 +70,20 @@ public class E11 extends Solution
 
 		Bounds bounds = new Bounds(0, 0, szx, szy);
 		
-		if (rf == 1) bounds.y1 -= frame - 1;
-		if (cf > 0) bounds.x1 -= frame - 1;		
-		if (cf == -1) bounds.x0 = frame - 1;
+		if (rf == 1)
+		{
+			bounds.y1 -= frame - 1;
+		}
+		
+		if (cf > 0) 
+		{
+			bounds.x1 -= frame - 1;		
+		}
+		
+		if (cf == -1)
+		{
+			bounds.x0 = frame - 1;
+		}
 		
 		return bounds;
 	}
@@ -91,12 +102,15 @@ public class E11 extends Solution
 	public static int product(int y, int x, int dy, int dx, int numElements) 
 	{
 		int prod = 1;	
+		
 		for(int i = 0; i < numElements; i++)
 		{ 
 			prod *= E11Read.readItem(E11Data.LINES, y, x);
+			
 			x += dx;
 			y += dy;
 		}
+		
 		return prod;		
 	}
 	

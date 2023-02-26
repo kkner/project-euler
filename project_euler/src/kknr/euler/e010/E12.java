@@ -74,7 +74,7 @@ public class E12 extends Solution
 	 * @param x The number to count divisors of.
 	 * @return Number of divisors calculated.
 	 */
-	public static int countDivisors(int x)
+	public int countDivisors(int x)
 	{
 		// We will multiply prod with count whenever cand is updated.
 		int prod = 1;
