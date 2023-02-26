@@ -31,15 +31,19 @@ public class E08 extends Solution
 	public static long sumAt(String data, int start, int window)
 	{
 		long p = 1;
+		
 		for(int j = start; j < start + window; j++) 
+		{
 			p *= getDigit(data, j);
+		}
+		
 		return p;
 	}
 
 	public static int getDigit(String data, int ind) 
 	{
-		char c = data.charAt(ind);
-		int d = c - '0';
+		final char c = data.charAt(ind);
+		final int d = c - '0';
 		return d;
 	}
 }
