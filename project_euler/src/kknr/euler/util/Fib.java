@@ -1,5 +1,7 @@
 package kknr.euler.util;
 
+import java.util.NoSuchElementException;
+
 public class Fib implements ISeq<Long> 
 {
 	@Override
@@ -17,6 +19,11 @@ public class Fib implements ISeq<Long>
 	@Override
 	public Long adv() 
 	{
+		if (prev == ILLEGAL_VALUE)
+		{
+			throw new NoSuchElementException();
+		}
+		
 		// If next value would overflow, 
 		if (curr > Long.MAX_VALUE - prev) 
 		{

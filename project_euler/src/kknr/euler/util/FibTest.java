@@ -2,6 +2,9 @@ package kknr.euler.util;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.NoSuchElementException;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class FibTest
@@ -34,12 +37,20 @@ public class FibTest
 			// Advance control array index.
 			expIndex++;
 		}
+
+		// Control array must be exhausted at this point.
+		assertEquals(F.length, expIndex);
 		
 		// f.current must be the last element in control array.
 		assertEquals(F[F.length - 1], f.curr());
+		assertEquals(F[F.length - 1], f.curr());
 		
-		// Control array must be exhausted.
-		assertEquals(F.length, expIndex);
+		Assertions.assertThrows(NoSuchElementException.class, () -> f.adv() );
+
+		// Calls to curr after exception
+		assertEquals(F[F.length - 1], f.curr());
+		assertEquals(F[F.length - 1], f.curr());
+
 	}
 	
 	static final long[] F = 
