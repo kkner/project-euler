@@ -2,43 +2,6 @@ package kknr.euler.e010;
 
 import kknr.euler.Solution;
 
-/*
- * 
- * Proof:
- * 
- * Maximum change the sum for n'th place can make on 
- * the sum for (n+1)'th place can be 99.
- * 
- * Maximum change the sum for n'th place can make on 
- * the sum for (n+2)'th place can be 10:
- * 
- * When sum(n+1) = 70
- * If carry from n  =  0 -> carry from n+1 = 7
- * If carry from n  = 99 -> carry from n+1 = 16
- * 
- * When sum(n+1) = 71
- * If carry from n  =  0 -> carry from n+1 = 7
- * If carry from n  = 99 -> carry from n+1 = 17
- * 
- * When sum(n+1) = 79
- * If carry from n  =  0 -> carry from n+1 = 7
- * If carry from n  = 99 -> carry from n+1 = 17
- * 
- * Maximum change the sum for n'th place can make on 
- * the sum for (n+2)'th place can be 1.
- * 
- * When sum(n+2) = 70
- * If carry from n  =  0 -> carry from n+1 = 7
- * If carry from n  = 10 -> carry from n+1 = 8
- * 
- * When sum(n+2) = 79
- * If carry from n  =  0 -> carry from n+1 = 7
- * If carry from n  = 10 -> carry from n+1 = 8
- * 
- * Therefore, n'th place cannot affect beyond (n+3)'th place.
- * 
- * 
- */
 
 public class E13B extends Solution
 {
@@ -48,6 +11,43 @@ public class E13B extends Solution
 
 	public long solve()
 	{		
+		/*
+		 * Proof:
+		 * 
+		 * Maximum change the sum for nth place can make on 
+		 * the sum for (n+1)'th place can be 99.
+		 * 
+		 * Maximum change the sum for nth place can make on 
+		 * the sum for (n+2)'th place can be 10:
+		 * 
+		 * When sum(n+1) = 70
+		 * If carry from n  =  0 -> carry from n+1 = 7
+		 * If carry from n  = 99 -> carry from n+1 = 16
+		 * 
+		 * When sum(n+1) = 71
+		 * If carry from n  =  0 -> carry from n+1 = 7
+		 * If carry from n  = 99 -> carry from n+1 = 17
+		 * 
+		 * When sum(n+1) = 79
+		 * If carry from n  =  0 -> carry from n+1 = 7
+		 * If carry from n  = 99 -> carry from n+1 = 17
+		 * 
+		 * Maximum change the sum for nth place can make on 
+		 * the sum for (n+2)'th place can be 1.
+		 * 
+		 * When sum(n+2) = 70
+		 * If carry from n  =  0 -> carry from n+1 = 7
+		 * If carry from n  = 10 -> carry from n+1 = 8
+		 * 
+		 * When sum(n+2) = 79
+		 * If carry from n  =  0 -> carry from n+1 = 7
+		 * If carry from n  = 10 -> carry from n+1 = 8
+		 * 
+		 * nth place cannot affect beyond (n+3)'th place.
+		 * 
+		 */
+		
+		
 		String[] lines = E13Data.DATA;
 		
 		long sum = 0;
