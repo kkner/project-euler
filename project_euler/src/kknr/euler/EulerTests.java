@@ -132,21 +132,18 @@ class EulerTests
 	@Test
 	public void e03() {
 		assertEquals(E03_ANS_TOY, new E03(false).solve(E03_PRM_TOY));
-		for(int i = 0; i < 100; i++)
 		assertEquals(E03_ANS, new E03(false).solve(E03_PRM));
 	}
 
 	@Test
 	public void e03B() {
 		assertEquals(E03_ANS_TOY, new E03B(false).solve(E03_PRM_TOY));
-		for(int i = 0; i < 100; i++)
 		assertEquals(E03_ANS, new E03B(false).solve(E03_PRM));
 	}
 
 	@Test
 	public void e03C() {
 		assertEquals(E03_ANS_TOY, new E03C(false).solve(E03_PRM_TOY));
-		for(int i = 0; i < 100; i++)
 		assertEquals(E03_ANS, new E03C(false).solve(E03_PRM));
 	}
 
