@@ -1,6 +1,7 @@
 package kknr.euler.e000;
 
 import kknr.euler.Solution;
+import static kknr.euler.util.Util.isEven;
 
 /**
  * Brute force.
@@ -17,8 +18,7 @@ public class E02 extends Solution
 		
 		for(int prev = 1, curr = 1; curr < LIMIT; ) 
 		{			
-			// If even number, then add.
-			if (curr % 2 == 0)
+			if (isEven(curr))
 			{
 				sum += curr;
 			}
