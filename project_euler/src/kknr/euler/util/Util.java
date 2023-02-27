@@ -356,4 +356,57 @@ public class Util
 				
 		return prod;		
 	}		
+
+	// TODO add test
+	/**
+	 * Reverses the elements in an array in the given range. 
+	 * @param a The array to be modified.
+	 * @param b First index (inclusive).
+	 * @param e Last index (inclusive).
+	 */
+	public static void reverse(int[] a, int b, int e)
+	{
+		for(; b < e; b++, e--) 
+		{
+			exch(a, b, e);
+		}
+	}
+
+	// TODO add test
+	/**
+	 * Swaps two elements in an array
+	 * @param a The array.
+	 * @param p Index of element 1.
+	 * @param q Index of element 2.
+	 */
+	public static void exch(int[] a, int p, int q)
+	{
+		if (p != q) 
+		{
+			int temp = a[p];
+			a[p] = a[q];
+			a[q] = temp;		
+		}
+	}
+
+	// TODO add test
+	/**
+	 * Interpret array elements as digits and convert to a single integer. 
+	 * @param arr The array of digits
+	 * @return The reconstructed number.
+	 */
+	public static long read(int[] arr, int offset, int len)
+	{
+		long result = 0;
+		
+		for(int i = offset; i < offset + len; i++)
+		{
+			int d = arr[i];
+			assert d >= 0 && d <= 9;
+			
+			result = result * 10 + d;
+		}
+		
+		return result;
+	}
 }
