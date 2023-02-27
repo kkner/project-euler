@@ -12,6 +12,7 @@ public class E03C extends Solution
 	public long solve(long x) 
 	{
 		long maxPrime = (long)Math.ceil(Math.sqrt(x));
+		
 		long[] sieve = Primes3.makeSieve(maxPrime);
 		
 		long p = 2;
