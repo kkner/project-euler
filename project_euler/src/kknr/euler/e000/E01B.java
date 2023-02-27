@@ -1,7 +1,8 @@
 package kknr.euler.e000;
 
+
 import kknr.euler.Solution;
-import kknr.euler.util.Util;
+import static kknr.euler.util.Util.triangular;
 
 /**
  * Analytical solution.
@@ -23,13 +24,13 @@ public class E01B extends Solution
 
 	public int solve(int n)
 	{
-		n--;
+		n--; // Limit must be inclusive.
 		
 		int sum = 0;
 		
-		sum += 3 * Util.triangular(n / 3);
-		sum += 5 * Util.triangular(n / 5);
-		sum -= 15 * Util.triangular(n / 15);
+		sum += 3 * triangular(n / 3);
+		sum += 5 * triangular(n / 5);
+		sum -= 15 * triangular(n / 15);
 		
 		return sum;
 	}
