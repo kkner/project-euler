@@ -89,9 +89,9 @@ import kknr.euler.e010.e17.E17B;
 import kknr.euler.e020.E20;
 import kknr.euler.e020.E21;
 import kknr.euler.e020.E22;
-import kknr.euler.e020.E23;
-import kknr.euler.e020.E23C;
-import kknr.euler.e020.E23D;
+import kknr.euler.e020.e23.E23A;
+import kknr.euler.e020.e23.E23B;
+import kknr.euler.e020.e23.E23C;
 import kknr.euler.util.Util;
 
 class EulerTests 
@@ -321,17 +321,17 @@ class EulerTests
 	}		
 
 	@Test
-	public void e23() {
-		assertEquals(E23_ANS, new E23(false).solve());
+	public void e23a() {
+		assertEquals(E23_ANS, new E23A(false).solve());
+	}	
+
+	@Test
+	public void e23b() {
+		assertEquals(E23_ANS, new E23B(true).solve());
 	}	
 
 	@Test
 	public void e23c() {
 		assertEquals(E23_ANS, new E23C(true).solve());
-	}	
-
-	@Test
-	public void e23d() {
-		assertEquals(E23_ANS, new E23D(true).solve());
 	}	
 }
