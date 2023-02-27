@@ -24,7 +24,7 @@ public class E21 extends Solution
 		for(int n = 2; n < LIM; n++)
 		{			
 			// We call our common function for this.
-			int s = cached[n] = Util.sumOfProperDivisors(n);
+			int s = cached[n] = (int)Util.sumOfDivisors(n) - n;
 			
 			// Check if the reverse is true.
 			// If s is the smaller one, we must have recorded it.

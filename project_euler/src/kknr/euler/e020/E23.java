@@ -14,82 +14,83 @@ public class E23 extends Solution
 
 	public int solve()
 	{		
-		int lim = LIM;
+		lim = LIM;	
 		
-		// Get all abundant numbers <= lim.
-		List<Integer> abs = collect(lim);
+		abs = new ArrayList<Integer>();
+		isab = new boolean[lim + 1];
 
-		// Can number be written as sum of two abundant numbers.
-		boolean[] can = new boolean[lim + 1];		
+		collect();
 
-		// Iterate over every possible sum, 
-		for(int j = 0; j < abs.size(); j++) 
-		{
-			for(int i = j; i < abs.size(); i++) 
-			{
-				int sum = abs.get(j) + abs.get(i);
-				
-				// Bc both j & i are increasing, 
-				// all the rest of the sums will be greater. 
-				if (sum > LIM) 
-				{
-					break;
-				}
-				
-				can[sum] = true;
-			}
-		}
+		int result = sumConditional();
 		
-		return sumConditional(can, false);
-	}
+		abs = null;
+		isab = null;
+		
+		return result;
+	}	
 
-	/** 
-	 * Sum all indices of array where the value equals target.
-	 * @param can
-	 * @return
-	 */
-	public static int sumConditional(boolean[] can, boolean target)
+	private void collect() 
 	{
-		int sum = 0;
-		for(int i = 1; i < can.length; i++) 
-		{
-			if (target == can[i])
-			{ 
-				sum += i;
-			}
-		}
-		return sum;
-	}
-
-	/**
-	 * Collect all abundant numbers <= lim
-	 * @param lim
-	 * @return
-	 */
-	public static List<Integer> collect(int lim) 
-	{
-		List<Integer> abs = new ArrayList<Integer>();
-		
 		for(int n = 1; n <= lim; n++)
 		{
-			if (isAbundant(n)) 
+			boolean isAbundant = calcIsAbundant(n);
+			
+			isab[n] = isAbundant;
+			
+			if (isAbundant) 
 			{
-				// Add to list.
 				abs.add(n);
 			}
 		}
-		
-		return abs;
 	}
-	
-	public static boolean isAbundant(int n)
+
+	public static boolean calcIsAbundant(int n)
 	{
 		// Calculate proper divisor sum.
-		int s = Util.sumOfProperDivisors(n);
+		long s = Util.sumOfDivisors(n) - n;
 		
 		// If proper divisor sum is greater than n. 
 		return s > n; 
 	}
+
+	private int sumConditional() 
+	{
+		int sum = 0;
+		
+		for(int n = 1; n <= lim; n++) 
+		{
+			if (!isSumOfTwo(n))
+			{
+				sum += n;
+			}
+		}
+		
+		return sum;
+	}
+
+	private boolean isSumOfTwo(int n) 
+	{		
+		for(int a: abs) 
+		{
+			if (a >= n)
+			{
+				break;
+			}
+			
+			int b = n - a;
+			
+			if (isab[b]) 
+			{
+				return true;
+			}
+		}
+		
+		return false; 
+	}
+
+	private int lim;
+	private List<Integer> abs;
+	private boolean[] isab;
 
 	public static final int LIM = 28123;
 }

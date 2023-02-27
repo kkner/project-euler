@@ -1,5 +1,7 @@
 package kknr.euler.util;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -231,22 +233,31 @@ public class Util
 	}
 	
     // TODO add comment
-	public static int sumOfProperDivisors(int n)
+	public static long sumOfDivisors(int n)
 	{		
-		return sumOfProperDivisors(n, new FactorsFixed(n));
+		return sumOfDivisors(n, new FactorsFixed(n));
 	}
 	
     // TODO add test
     // TODO add comment
-	public static int sumOfProperDivisors(int n, List<Integer> primes)
+	public static long sumOfDivisors(int n, List<Integer> primes)
 	{		
 		//return sumOfProperDivisors(n, new FactorsPList(n, primes));
-		return sumOfProperDivisors(n, new Factors(n, new SeqList<>(primes)));
+		return sumOfDivisors(n, new Factors<>(n, new SeqList<>(primes)));
 	}
 
     // TODO add test
-    // TODO add comment
-	public static int sumOfProperDivisors(int n, ISeq<Long> f)
+	/**
+	 * 
+	 * Formula for sum of divisors.
+	 * https://planetmath.org/formulaforsumofdivisors
+	 * 
+	 * 
+	 * @param n
+	 * @param f
+	 * @return
+	 */
+	public static long sumOfDivisors1(int n, ISeq<Long> f)
 	{	
 		Map<Integer, Integer> counts = new HashMap<Integer, Integer>();
 		
@@ -258,18 +269,91 @@ public class Util
 			counts.put(p, count + 1);
 		}
 		
-		int result = 1;
+		// It is interesting that (prime - 1) can always divide
+		// the current numerator, so our running denominator
+		// is always 1.
+		
+		// Does (p-1) always divide (p^n - 1) when p is prime?
+
+		long num = 1;
+		long den = 1;
 		
 		for(Map.Entry<Integer, Integer> e: counts.entrySet()) 
 		{
 			int prime = e.getKey();
 			int count = e.getValue();
-			result *= ipow(prime, count + 1) - 1;
-			result /= prime - 1;
+
+			// Multiply running product with this prime's term.			
+
+			// Multiply with term's numerator.
+			num *= ipow(prime, count + 1) - 1;
+			
+			// Multiply with term's denominator.
+			den *= prime - 1;
+			
+			long g = Util.gcd(num, den);
+			num /= g;
+			den /= g;
 		}
 		
-		result -= n;
-		
-		return result;		
+		return num;		
 	}	
+	
+	
+	
+	
+    // TODO add test
+	/**
+	 * 
+	 * Formula for sum of divisors.
+	 * https://planetmath.org/formulaforsumofdivisors
+	 * 
+	 * 
+	 * @param n
+	 * @param f
+	 * @return
+	 */
+	public static long sumOfDivisors(int n, ISeq<Long> f)
+	{	
+		long prevP = 0;
+
+		// It is interesting that (prime - 1) can always divide
+		// the current numerator, so our running denominator
+		// is always 1.
+		
+		// Does (p-1) always divide (p^n - 1) when p is prime?
+
+		long prod = 1;
+		long term = 1;
+		
+		while(f.has())
+		{
+			long p = (long)f.adv();
+			
+			if (p != prevP) 
+			{
+				if (term > 1) 
+				{
+					prod *= (term * prevP) - 1;
+					assert prod % (prevP - 1) == 0;
+					prod /= prevP - 1;
+				}
+				term = 1;
+				prevP = p;
+			}
+			
+			term *= p;
+		}
+
+		if (term > 1) 
+		{
+			prod *= (term * prevP) - 1;
+			assert prod % (prevP - 1) == 0;
+			prod /= prevP - 1;
+		}
+		
+		// assertEquals(sumOfProperDivisors1(n, new FactorsFixed(n)), prod);
+				
+		return prod;		
+	}		
 }

@@ -2,9 +2,9 @@ package kknr.euler.util;
 
 import java.util.NoSuchElementException;
 
-public class Factors implements ISeq<Long> 
+public class Factors<C extends Number> implements ISeq<Long> 
 {
-	public Factors(long x, ISeq<Integer> candidates) 
+	public Factors(long x, ISeq<C> candidates) 
 	{
 		this.x = x;
 		this.cand = 0;		
@@ -76,11 +76,11 @@ public class Factors implements ISeq<Long>
 		{
 			throw new NoSuchElementException();
 		}
-		cand = candidates.adv();
+		cand = candidates.adv().longValue();
 	}
 
 	private long x;
 	private long cand;
-	private ISeq<Integer> candidates;
+	private ISeq<C> candidates;
 	
 }

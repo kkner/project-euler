@@ -2,6 +2,7 @@ package kknr.euler.util;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.function.LongFunction;
@@ -12,44 +13,71 @@ import kknr.euler.prime.Primes4000;
 
 public class FactorsTest
 {
+	
+	public static interface FactorsFactory extends LongFunction<ISeq<Long>> 
+	{		
+	}
+	
 	@Test
 	void test() 
 	{
+		// Integer list of some primes.
 		List<Integer> primes = Util.asList(Primes4000.primes4000);
 		
-		LongFunction<ISeq<Long>> factory1 = new LongFunction<ISeq<Long>>() {
-			@Override public ISeq<Long> apply(long num) {
+		// Same list as longs.
+		List<Long> primesL = new ArrayList<Long>();
+		for(int p: primes)
+		{
+			primesL.add((long)p);
+		}
+		
+		FactorsFactory factory1 = new FactorsFactory() {
+			@Override 
+			public ISeq<Long> apply(long num) {
 				return new FactorsFixed(num);
 			}
 		};
 
-		LongFunction<ISeq<Long>> factory2 = new LongFunction<ISeq<Long>>() {
-			@Override public ISeq<Long> apply(long num) {
+		FactorsFactory factory2 = new FactorsFactory() {
+			@Override 
+			public ISeq<Long> apply(long num) {
 				return new FactorsPList(num, primes);
 			}
 		};
 
-		LongFunction<ISeq<Long>> factory3 = new LongFunction<ISeq<Long>>() {
-			@Override public ISeq<Long> apply(long num) {
-				return new Factors(num, new SeqList<>(primes));
+		FactorsFactory factory3 = new FactorsFactory() {
+			@Override 
+			public ISeq<Long> apply(long num) {
+				return new Factors<>(num, new SeqList<>(primes));
 			}
 		};
 
-		LongFunction<ISeq<Long>> factory4 = new LongFunction<ISeq<Long>>() {
-			@Override public ISeq<Long> apply(long num) {
-				return new Factors(num, new Seq23579());
+		FactorsFactory factory4 = new FactorsFactory() {
+			@Override 
+			public ISeq<Long> apply(long num) {
+				return new Factors<>(num, new Seq23579());
 			}
 		};
-		
-		LongFunction factories[] = {factory1, factory2, factory3, factory4};
 
-		for(LongFunction<ISeq<Long>> factory: factories) 
+		FactorsFactory factory5 = new FactorsFactory() {
+			@Override 
+			public ISeq<Long> apply(long num) {
+				return new Factors<>(num, new SeqList<>(primesL));
+			}
+		};
+
+		FactorsFactory factories[] = {factory1, factory2, factory3, factory4, factory5};
+
+		for(FactorsFactory factory: factories) 
 		{
 			testFactors(factory, new int[] {2,5,5,11} );
 			testFactors(factory, new int[] {2,5} );
 			testFactors(factory, new int[] {2} );
 			testFactors(factory, new int[] {7} );
-			testFactors(factory, new int[] {7,7} );		
+			testFactors(factory, new int[] {7,7} );
+			testFactors(factory, new int[] {5,5,7,7} );
+			testFactors(factory, new int[] {5,11,11} );
+			testFactors(factory, new int[] {5,7,7,11,11} );
 			testFactors(factory, new int[] {} );
 		}
 	}
@@ -58,7 +86,7 @@ public class FactorsTest
 	 * 
 	 * @param factors Must be sorted prime numbers.
 	 */
-	private void testFactors(LongFunction<ISeq<Long>> factory, int[] factors) 
+	private void testFactors(FactorsFactory factory, int[] factors) 
 	{
 		// Calculate product of all factors.
 		long num = 1;

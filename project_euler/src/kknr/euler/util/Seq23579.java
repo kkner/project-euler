@@ -3,7 +3,10 @@ package kknr.euler.util;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class Seq23579 implements ISeq<Integer> 
+/**
+ * Generates the sequence 2,3,5,7,9,...
+ */
+public class Seq23579 implements ISeq<Long> 
 {
 	public Seq23579() 
 	{
@@ -17,9 +20,9 @@ public class Seq23579 implements ISeq<Integer>
 	}
 
 	@Override
-	public Integer adv() 
+	public Long adv() 
 	{
-		if (curr > Integer.MAX_VALUE - 2)
+		if (curr > Long.MAX_VALUE - 2)
 		{
 			throw new NoSuchElementException();
 		}
@@ -41,7 +44,7 @@ public class Seq23579 implements ISeq<Integer>
 	}
 
 	@Override
-	public Integer curr() 
+	public Long curr() 
 	{
 		if (curr == 0)
 		{
@@ -51,5 +54,5 @@ public class Seq23579 implements ISeq<Integer>
 		return curr;
 	}
 
-	private int curr;
+	private long curr;
 }
