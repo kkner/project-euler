@@ -1,11 +1,13 @@
 package kknr.euler.e020.e23;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.IntConsumer;
 
 import kknr.euler.prime.Primes3;
 import kknr.euler.util.Util;
 
-public class SolverB extends Solver 
+public class SolverB extends SolverA 
 {
 	public SolverB(int lim) 
 	{
@@ -17,12 +19,10 @@ public class SolverB extends Solver
 		
 		long[] sieve = Primes3.makeSieve(maxPrime);	
 		primes = Primes3.collect(sieve, maxPrime, null);				
-		
-		isAbundant = new boolean[lim + 1];
 	}
 
 	@Override
-	protected void collect(List<Integer> li)
+	protected void collect(IntConsumer collector)
 	{
 		// For all n <= lim.
 		for(int n = 1; n <= lim; n++) 
@@ -35,17 +35,11 @@ public class SolverB extends Solver
 			{
 				// Mark and collect.
 				isAbundant[n] = true;
-				li.add(n);
+				collector.accept(n);
 			}
 		}		
 	}
 
-	@Override
-	protected boolean isAbundant(int b) {
-		return isAbundant[b];
-	}				
-
-	private boolean[] isAbundant;
 	private List<Integer> primes;
 
 }

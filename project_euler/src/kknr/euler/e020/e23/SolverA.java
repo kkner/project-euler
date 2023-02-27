@@ -1,6 +1,6 @@
 package kknr.euler.e020.e23;
 
-import java.util.List;
+import java.util.function.IntConsumer;
 
 import kknr.euler.util.Util;
 
@@ -13,7 +13,8 @@ public class SolverA extends Solver
 		isAbundant = new boolean[lim + 1];
 	}
 	
-	protected void collect(List<Integer> li) 
+	@Override
+	protected void collect(IntConsumer collector)
 	{
 		for(int n = 1; n <= lim; n++)
 		{
@@ -23,9 +24,15 @@ public class SolverA extends Solver
 			
 			if (isAb) 
 			{
-				li.add(n);
+				collector.accept(n);
 			}
 		}
+		
+	}
+
+	@Override
+	protected boolean isAbundant(int b) {
+		return isAbundant[b];
 	}
 
 	public static boolean calcIsAbundant(int n)
@@ -37,10 +44,5 @@ public class SolverA extends Solver
 		return s > n; 
 	}
 
-	@Override
-	protected boolean isAbundant(int b) {
-		return isAbundant[b];
-	}
-	
-	private boolean[] isAbundant;
+	protected boolean[] isAbundant;
 }

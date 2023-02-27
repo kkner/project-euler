@@ -1,6 +1,8 @@
 package kknr.euler.e020.e23;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.IntConsumer;
 
 public class SolverC extends Solver 
 {	
@@ -12,9 +14,8 @@ public class SolverC extends Solver
 	}
 	
 	@Override
-	protected void collect(List<Integer> li) 
+	protected void collect(IntConsumer collector) 
 	{
-		
 		for(int i = 0; i < mult.length; i++)
 		{
 			mult[i] = 1;
@@ -43,15 +44,14 @@ public class SolverC extends Solver
 					}
 				}
 			} 
-			else 
+			else // If not prime,
 			{
-				if (mult[i] - i > i)
+				if (isAbundant(i)) // We can use this at this point.
 				{
-					//format("%d: %d\n", i, mult[i]);
-					li.add(i);
+					collector.accept(i);
 				}
 			}
-		}
+		}		
 	}
 
 	@Override

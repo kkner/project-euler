@@ -2,6 +2,7 @@ package kknr.euler.e020.e23;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.IntConsumer;
 
 public abstract class Solver 
 {	
@@ -14,7 +15,7 @@ public abstract class Solver
 	{
 		List<Integer> abundants = new ArrayList<Integer>();
 		
-		collect(abundants);
+		collect( n -> abundants.add(n) );
 		
 		return sumConditional(abundants);
 	}
@@ -53,8 +54,8 @@ public abstract class Solver
 		
 		return false; 
 	}
-
-	protected abstract void collect(List<Integer> li);
+	
+	protected abstract void collect(IntConsumer collector);
 	protected abstract boolean isAbundant(int b);
 	
 	protected int lim;
