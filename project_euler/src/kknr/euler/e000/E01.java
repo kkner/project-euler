@@ -1,5 +1,7 @@
 package kknr.euler.e000;
 
+import static kknr.euler.util.Util.divides;
+
 public class E01 
 {
 	/**
@@ -13,7 +15,7 @@ public class E01
 		for(int i = 1; i < lim; i++) 
 		{			
 			// If divides with either 3 or 5, 
-			if (i % 3 == 0 || i % 5 == 0) 
+			if (divides(i, 3) || divides(i, 5)) 
 			{				
 				// Add to sum.
 				sum += i;

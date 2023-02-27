@@ -25,6 +25,18 @@ public class Util
 	{
 		return BigInteger.valueOf(x);
 	}
+	
+	// TODO add test
+	/**
+	 * Return if a divides b.
+	 * 
+	 * @param a Dividend.
+	 * @param b Divisor.
+	 * @return If a divides b.
+	 */
+	public static boolean divides(long a, long b) {
+		return (a % b) == 0;
+	}
 
 	/**
 	 * Calculates the nth triangular number.
