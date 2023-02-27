@@ -19,13 +19,12 @@ public class E02B extends Solution
 		int sum = 0;	
 		
 		Fib fib = new Fib();
-		fib.adv();
-		
-		for(; fib.curr() < LIMIT; fib.adv())
+				
+		for(long term; (term = fib.adv()) < LIMIT; )
 		{
-			if (Util.isEven(fib.curr()))
+			if (Util.isEven(term))
 			{
-				sum += fib.curr();
+				sum += term;
 			}
 		}
 		
