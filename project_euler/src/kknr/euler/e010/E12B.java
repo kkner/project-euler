@@ -28,7 +28,7 @@ public class E12B extends E12
 			// If found a different prime factor than the previous one:
 			if (p != prevP) 
 			{
-				// Now, pCount is the count of occurence of p in x's prime factors.
+				// Now pCount is the count of occurence of p in x's prime factors.
 				prod *= counter + 1;
 				
 				// Reset counter.
@@ -43,4 +43,4 @@ public class E12B extends E12
 		
 		return prod;
 	}
-	}
+}
