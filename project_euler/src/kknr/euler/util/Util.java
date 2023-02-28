@@ -2,7 +2,10 @@ package kknr.euler.util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.File;
+import java.io.IOException;
 import java.math.BigInteger;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -559,6 +562,19 @@ public class Util
     	result *= 2 * n - 1;
     	return result;
     }
+
+    // TODO add test (?)
+    // TODO add comment
+	public static String readFileAsString(String fn)
+	{
+		try {
+			byte[] bytes = Files.readAllBytes(new File(fn).toPath());
+			return new String(bytes);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 
 	public static Comparator<Integer> comp = (x, y) -> Integer.compare(x, y);
 	public static Comparator<Integer> reverseComp = (x, y) -> Integer.compare(y, x);	
