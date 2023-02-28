@@ -12,40 +12,51 @@ public class E29 extends Solution
 		super(doPrint);
 	}
 
+	/**
+	 * If B is not a power of A,
+	 * then no powers of B can be equal to a power of A.
+	 * @return
+	 */
 	public long solve()
 	{
 		boolean[] done = new boolean[LIM + 1];
 		
 		int count = 0;		
 		
-		for(int a = 2; a <= LIM; a++)
+		int a;
+
+		for(a = 2; a * a <= LIM; a++)
 		{
-			// Already processed as a power of a smaller number. 
-			if (done[a])
+			// If not already processed as a power of a smaller number, 
+			if (!done[a])
 			{
-				continue;
-			}
+				println(a);
+				
+				// Keep track of unique powers.
+				Set<Integer> set = new HashSet<Integer>();
 			
-			// If this number cannot produce a power <= LIM
-			if (a * a > LIM)
+				// Iterate over all powers of a <= LIM.			
+				for(int power = a, p = 1; power <= LIM; power *= a, p++)
+				{
+					println(power,  a);
+					done[power] = true;
+					addPowers(set, p);
+				}
+				
+				println(set);
+				count += set.size();
+			}
+		}
+		
+		for(; a <= LIM; a++) 
+		{
+			if (!done[a])
 			{
 				// All 99 powers are unique.
 				count += LIM - 2 + 1;
-				continue;
 			}
-		
-			// Keep track of unique powers.
-			Set<Integer> set = new HashSet<Integer>();
-		
-			// Iterate over all powers of a <= LIM.			
-			for(int power = a, p = 1; power <= LIM; power *= a, p++)
-			{
-				done[power] = true;
-				addPowers(set, p);
-			}
-			
-			count += set.size();
 		}
+		
 	
 		return count;
 	}
