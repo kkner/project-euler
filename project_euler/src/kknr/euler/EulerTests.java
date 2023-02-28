@@ -59,7 +59,6 @@ import kknr.euler.e000.E03B;
 import kknr.euler.e000.E03C;
 import kknr.euler.e000.E04;
 import kknr.euler.e000.E05;
-import kknr.euler.e000.E05B;
 import kknr.euler.e000.E05C;
 import kknr.euler.e000.E06;
 import kknr.euler.e000.E06Brute;
@@ -160,15 +159,9 @@ class EulerTests
 	}
 
 	@Test
-	public void e05B() {
-		assertEquals(E05_ANS_TOY, new E05B(false).solve(E05_PRM_TOY, E05B.PRIMES));
-		assertEquals(E05_ANS, new E05B(false).solve(E05_PRM, E05B.PRIMES));
-	}
-
-	@Test
 	public void e05C() {
-		assertEquals(E05_ANS_TOY, new E05C(false).solve(E05_PRM_TOY, E05B.PRIMES));
-		assertEquals(E05_ANS, new E05C(false).solve(E05_PRM, E05B.PRIMES));
+		assertEquals(E05_ANS_TOY, new E05C(false).solve(E05_PRM_TOY, E05C.PRIMES));
+		assertEquals(E05_ANS, new E05C(false).solve(E05_PRM, E05C.PRIMES));
 	}
 
 	@Test

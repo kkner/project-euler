@@ -38,4 +38,6 @@ public class E05C extends Solution
 		
 		return pow / d;
 	}
+
+	public static final int[] PRIMES = {2,3,5,7,11,13,17,19};
 }
