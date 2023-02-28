@@ -11,22 +11,24 @@ public class E75 extends Solution
 
 	public long solve()
 	{
-		int[] hitCount = new int[(int) limit + 1];
+		int[] hitCount = new int[(int) LIMIT + 1];
 
-		for (long m = 2; m <= limit; m++) 
+		for (long m = 2; m <= LIMIT; m++) 
 		{
 			boolean found = false;
 			boolean m_even = m % 2 == 0;
+			
 			for (long n = 1; n < m; n++)
 			{
 				boolean n_even = n % 2 == 0;
+				
 				if (m_even || n_even)
 				{
 					if (Util.gcd(n, m) == 1)
 					{
 						long sum = 2 * m * (m + n);
 					
-						if (sum > limit) 
+						if (sum > LIMIT) 
 						{
 							break;
 						}
@@ -34,7 +36,7 @@ public class E75 extends Solution
 						found = true;
 						int isum = (int) sum;
 						
-						for (int j = isum; j <= limit; j += isum) 
+						for (int j = isum; j <= LIMIT; j += isum) 
 						{
 							hitCount[j]++;
 						}
@@ -60,7 +62,5 @@ public class E75 extends Solution
 		return count;
 	}
 
-	private static final long limit = 1_500_000;
-	// private static final long limit = 120;
-	
+	private static final long LIMIT = 1_500_000;
 }

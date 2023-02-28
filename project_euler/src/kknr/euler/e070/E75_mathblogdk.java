@@ -27,12 +27,13 @@ public class E75_mathblogdk extends Solution
 		            long b = m * m - n * n;
 		            long c = 2 * m * n;
 		            long p = a + b + c;
+		            
 		            while(p <= limit)
 		            {
 		                triangles[(int)p]++;
 		                if (triangles[(int)p] == 1) result++;
 		                if (triangles[(int)p] == 2) result--;
-		                p += a+b+c;
+		                p += a + b + c;
 		            }
 		        }
 		    }

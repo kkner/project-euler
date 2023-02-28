@@ -20,9 +20,16 @@ public class E75B extends Solution
 	}
 
 	public int solve() 
-	{	
+	{
+		counters = new int[LIMIT + 1]; 
+
 		traverseTree(3, 4, 5);
-		return count1s(counters);
+		
+		int result = count1s(counters);
+		
+		counters = null;
+		
+		return result;
 	}
 
 	private void traverseTree(int a, int b, int c)
@@ -33,7 +40,7 @@ public class E75B extends Solution
 		//greater than its predecessors.
 		
 		//no need to continue
-		if (sum > limit) 
+		if (sum > LIMIT) 
 		{
 			return;
 		}
@@ -41,7 +48,7 @@ public class E75B extends Solution
 		for(int f = 1; ; f++) 
 		{
 			int fsum = sum * f;
-			if (fsum > limit) break;
+			if (fsum > LIMIT) break;
 			counters[fsum]++;
 		}
 		
@@ -89,6 +96,6 @@ public class E75B extends Solution
 		return result;
 	}
 	
-	private static final int limit = 1500 * 1000;
-	private int [] counters = new int[limit + 1]; 
+	private static final int LIMIT = 1500 * 1000;
+	private int[] counters; 
 }
