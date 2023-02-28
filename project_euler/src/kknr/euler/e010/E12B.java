@@ -43,6 +43,4 @@ public class E12B extends E12
 		
 		return prod;
 	}
-	
-	private static final int TARGET = 500;	
-}
+	}

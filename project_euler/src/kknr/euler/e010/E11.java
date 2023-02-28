@@ -40,14 +40,14 @@ public class E11 extends Solution
 	 * @param rf Direction r component.
 	 * @param cf Direction c component.
 	 */
-	static int checkDir(int rf, int cf, int frame)
+	private int checkDir(int rf, int cf, int frame)
 	{		
 		Bounds bounds = determineBounds(rf, cf, frame, SZ, SZ);
 	
 		return checkBounds(bounds, frame, rf, cf);
 	}
 
-	static int checkBounds(Bounds bounds, int frame, int dy, int dx) 
+	private int checkBounds(Bounds bounds, int frame, int dy, int dx) 
 	{
 		int best = 0;
 		
@@ -63,7 +63,7 @@ public class E11 extends Solution
 		return best;
 	}
 
-	static Bounds determineBounds(int rf, int cf, int frame, int szy, int szx)
+	public static Bounds determineBounds(int rf, int cf, int frame, int szy, int szx)
 	{
 		assert rf >= 0 && rf <= 1;
 		assert cf >= -1 && cf <= 1;
@@ -99,7 +99,7 @@ public class E11 extends Solution
 	 * @param numElements Number of elements.
 	 * @return
 	 */
-	public static int product(int y, int x, int dy, int dx, int numElements) 
+	private int product(int y, int x, int dy, int dx, int numElements) 
 	{
 		int prod = 1;	
 		
