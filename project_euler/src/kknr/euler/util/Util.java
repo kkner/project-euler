@@ -551,6 +551,15 @@ public class Util
 		return false;			
 	}
 
+	// TODO add test
+    // TODO add comment
+    public static long hexagonal(int n)
+    {
+    	long result = n;
+    	result *= 2 * n - 1;
+    	return result;
+    }
+
 	public static Comparator<Integer> comp = (x, y) -> Integer.compare(x, y);
 	public static Comparator<Integer> reverseComp = (x, y) -> Integer.compare(y, x);	
 }
