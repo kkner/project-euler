@@ -11,7 +11,16 @@ public class E12B extends E12
 		super(doPrint);
 	}
 
-	public int divisorCount(int x)
+	/**
+	 * Calculate the number of divisors for a given number.
+	 * 
+	 * Product of powers of distinct prime factors + 1
+	 * 2^3 * 5^2 * 7^4 -> (3+1)(2+1)(4+1)
+	 * 
+	 * @param x The input number.
+	 * @return Count of divisors.
+	 */
+	public int calcDivisorCount(int x)
 	{
 		int prod = 1;
 	

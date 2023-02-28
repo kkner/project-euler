@@ -30,6 +30,42 @@ public class E14B extends Solution
 		return new Solver().solve(new CollatzLen());
 	}
 
+	public static class Solver
+	{		
+		public long solve(CollatzLen col)
+		{
+			int[] cachedLengths = new Pre().search();
+			
+			col.setCache(cachedLengths);
+			
+			// Initialize best found.
+			int bestLen = 0, bestN = 0;
+			
+			for(int x = 1; x < LIM; x++) 
+			{				
+				// This line is different from E014:
+				// Try to find len for x in cache:
+				int len = cachedLengths[x];
+								
+				if (len == 0) // If not found:
+				{
+					// Calculate.
+					len = col.collatzLen(x);
+				}
+				
+				// Update best.
+				if (len > bestLen) 
+				{
+					bestLen = len;
+					bestN = x;
+				}
+			}
+
+			return bestN;
+		}
+	}
+
+
 	public static class Pre 
 	{		
 		private static final int SEARCH_LIM = 1000_100;
@@ -115,41 +151,6 @@ public class E14B extends Solution
 		{
 			return stack[--stackIndex];			
 		}		
-	}
-	
-	public static class Solver
-	{		
-		public long solve(CollatzLen col)
-		{
-			int[] cachedLengths = new Pre().search();
-			
-			col.setCache(cachedLengths);
-			
-			// Initialize best found.
-			int bestLen = 0, bestN = 0;
-			
-			for(int x = 1; x < LIM; x++) 
-			{				
-				// This line is different from E014:
-				// Try to find len for x in cache:
-				int len = cachedLengths[x];
-								
-				if (len == 0) // If not found:
-				{
-					// Calculate.
-					len = col.collatzLen(x);
-				}
-				
-				// Update best.
-				if (len > bestLen) 
-				{
-					bestLen = len;
-					bestN = x;
-				}
-			}
-
-			return bestN;
-		}
 	}
 	
 	public static final int LIM = 1000_000;
