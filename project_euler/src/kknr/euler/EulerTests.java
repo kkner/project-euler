@@ -134,6 +134,9 @@ import kknr.euler.e070.E75B;
 import kknr.euler.e070.E75_mathblogdk;
 import kknr.euler.e070.E76;
 import kknr.euler.e070.E76B;
+import kknr.euler.e070.E77;
+import kknr.euler.e070.E78;
+import kknr.euler.e070.E78B;
 
 class EulerTests 
 {
@@ -824,4 +827,18 @@ class EulerTests
 		assertEquals(1, E76.f(5, 1, cache));
 	}
 	
+	@Test
+	public void e77() {		
+		assertEquals(E77_ANS, new E77(false).solve());
+	}
+
+	@Test
+	public void e78() {		
+		assertEquals(E78_ANS, new E78(false).solve());
+	}
+
+	@Test
+	public void e78b() {		
+		assertEquals(E78_ANS, new E78B(false).solve());
+	}
 }
