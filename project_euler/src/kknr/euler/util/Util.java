@@ -753,6 +753,93 @@ public class Util
 		return Primes3.collect(sieve, maxPrimePlus1 - 1, null);
 	}	
 
+
+	/**
+	 * Are the two numbers permutations of same digits?  
+	 * @param a First number.
+	 * @param b Second number.
+	 * @return
+	 */
+	public static boolean arePermutations(long a, long b)
+	{
+		int[] digits = new int[10];
+		int zeroCount = digits.length;
+		
+		// Repeatedly remove a digit from both numbers 
+		// Until at least one of them has no digits left.
+		for(; a > 0 && b > 0; a /= 10, b /= 10)
+		{
+			// Remove the last digit from both.
+			int da = (int)(a % 10L);
+			int db = (int)(b % 10L);
+			
+			// Are we removing a zero?
+			if (digits[da] == 0)
+			{
+				zeroCount--;
+			}
+			digits[da]++;
+			
+			digits[db]--;
+	
+			// Have we added a zero?
+			if (digits[db] == 0)
+			{
+				zeroCount++;
+			}
+		}
+		
+		// If one of them has remaning digits,
+		if (a != 0 || b != 0) 
+		{
+			// They are not permutations of each other.
+			return false;
+		}
+		
+		// We should have 10 zeroes as in the beginning.
+		return zeroCount == digits.length;		
+	}
+	
+	private static final int [] isPermutationOf_hit = new int[10];
+
+    // TODO add test
+    // TODO add comment
+	public static boolean isPermutationOf(long a, long b) 
+	{	
+		if (a == b)
+		{
+			return true;
+		}
+
+		int [] hit = isPermutationOf_hit;
+		
+		for(int i = 0; i < hit.length; i++) 
+		{
+			hit[i] = 0;
+		}
+
+		for(; a > 0; a /= 10) 
+		{
+			hit[(int)(a % 10)]++;
+		}
+		
+		for(; b > 0; b /= 10) 
+		{
+			hit[(int)(b % 10)]--;			
+		}
+		
+		for(int i = 0; i < hit.length; i++) 
+		{
+			if (hit[i] != 0) 
+			{
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	
 	public static Comparator<Integer> comp = (x, y) -> Integer.compare(x, y);
 	public static Comparator<Integer> reverseComp = (x, y) -> Integer.compare(y, x);
 

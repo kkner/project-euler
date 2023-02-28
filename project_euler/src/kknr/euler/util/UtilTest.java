@@ -157,4 +157,16 @@ public class UtilTest
 		assertEquals(3, (long)pf.get(2L));
 		assertEquals(2, (long)pf.get(3L));
 	}
+	
+	
+	@Test
+	public void arePermutations() {		
+		assertEquals(true, Util.arePermutations(123, 312));
+		assertEquals(true, Util.arePermutations(3, 3));
+		assertEquals(false, Util.arePermutations(300, 30));
+		assertEquals(true, Util.arePermutations(120, 201));		
+		assertEquals(false, Util.arePermutations(1234, 1235));
+		assertEquals(false, Util.arePermutations(1234, 4323));
+		assertEquals(true, Util.arePermutations(1233, 2331));
+	}	
 }

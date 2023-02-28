@@ -117,6 +117,10 @@ import kknr.euler.e060.E67;
 import kknr.euler.e060.E68;
 import kknr.euler.e060.E69;
 import kknr.euler.e060.E69B;
+import kknr.euler.e070.E70;
+import kknr.euler.e070.E70Study1;
+import kknr.euler.e070.E70Study2;
+import kknr.euler.e070.E70b;
 
 class EulerTests 
 {
@@ -705,4 +709,28 @@ class EulerTests
 		assertEquals(E69_ANS, new E69B(false).solve() );
 	}
 	
+	@Test 
+	public void E70() {	
+		// 765 msec
+		assertEquals(E70_ANS, new E70(false).solve());
+	}
+	
+	@Test 
+	public void E70b() {	
+		// 1.8 seconds
+		assertEquals(E70_ANS, new E70b(false).solve());
+	}
+	
+	//@Test 
+	public void e70Study1() {	
+		// 52 sec
+		assertEquals(E70_ANS, new E70Study1(false).solve());
+	}
+
+	//@Test 
+	public void e70Study2() {	
+		// 26 sec
+		assertEquals(E70_ANS, new E70Study2(false).solve());
+	}
+
 }
