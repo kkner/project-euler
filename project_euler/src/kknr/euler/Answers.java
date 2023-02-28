@@ -70,4 +70,6 @@ public class Answers
 	static final int E35_ANS = 55;
 	static final int E36_ANS = 872187;
 	static final int E37_ANS = 748317;
+	static final int E38_ANS = 932718654;
+	static final int E39_ANS = 840;
 }
