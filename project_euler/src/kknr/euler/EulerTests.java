@@ -5,6 +5,7 @@ import static kknr.euler.Answers.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 import org.junit.jupiter.api.Test;
 
@@ -131,6 +132,8 @@ import kknr.euler.e070.E74;
 import kknr.euler.e070.E75;
 import kknr.euler.e070.E75B;
 import kknr.euler.e070.E75_mathblogdk;
+import kknr.euler.e070.E76;
+import kknr.euler.e070.E76B;
 
 class EulerTests 
 {
@@ -799,4 +802,26 @@ class EulerTests
 		assertEquals(E75_ANS, new E75_mathblogdk(false).solve());
 	}
 
+	@Test
+	public void e76() {
+		assertEquals(E76_ANS, new E76(false).solve());
+	}
+
+	@Test
+	public void e76b() {		
+		assertEquals(E76_ANS, new E76B(false).solve());
+	}
+	
+	@Test
+	public void e76_func() 
+	{
+		HashMap<Integer, Integer> cache = E76.createCache();
+		
+		assertEquals(3, E76.f(3, 3, cache));
+		assertEquals(6, E76.f(5, 4, cache));
+		assertEquals(3, E76.f(4, 2, cache));
+		assertEquals(1, E76.f(1, 1, cache));
+		assertEquals(1, E76.f(5, 1, cache));
+	}
+	
 }
