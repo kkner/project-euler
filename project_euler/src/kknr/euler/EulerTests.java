@@ -149,6 +149,9 @@ import kknr.euler.e080.E86;
 import kknr.euler.e080.E86Study;
 import kknr.euler.e080.E86Study2;
 import kknr.euler.e080.E86_mathblogdk;
+import kknr.euler.e080.E87;
+import kknr.euler.e080.E88;
+import kknr.euler.e080.E89;
 
 class EulerTests 
 {
@@ -925,4 +928,21 @@ class EulerTests
 		// 0.151 seconds
 		assertEquals(E86_ANS, new E86_mathblogdk(false).solve());
 	}
+
+	@Test
+	public void e87() {
+		assertEquals(E87_ANS, new E87().solve());
+	}
+
+	@Test
+	public void e88() {		
+		// 2.8 seconds
+		assertEquals(E88_ANS, new E88(false).solve());
+	}
+
+	@Test
+	public void e89() throws IOException {		
+		assertEquals(E89_ANS, new E89(false).solve());
+	}
+	
 }
