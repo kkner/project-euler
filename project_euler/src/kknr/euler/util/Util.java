@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -583,6 +584,20 @@ public class Util
 			throw new RuntimeException(e);
 		}
 	}
+
+    // TODO add test (?)
+    // TODO add comment
+	public static List<String> readAllLines(String filename) {
+		
+		List<String> lines = null;
+		try {
+			lines = Files.readAllLines(Paths.get(filename));
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+		return lines;
+	}
+	
 
 	// TODO add test
     // TODO add comment

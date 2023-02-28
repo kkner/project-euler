@@ -135,5 +135,6 @@ public class Answers
 	static final int E93_ANS = 1258;
 	static final int E94_ANS = 518408346;
 	static final int E95_ANS = 14316;
+	static final int E96_ANS = 24702;
 	
 }
