@@ -731,6 +731,13 @@ public class Util
     	return result;
     }
 
+    // TODO add test
+    // TODO add comment
+	public static int numDigits(BigInteger p)
+	{
+		return p.toString().length();
+	}
+
 	public static Comparator<Integer> comp = (x, y) -> Integer.compare(x, y);
 	public static Comparator<Integer> reverseComp = (x, y) -> Integer.compare(y, x);	
 }

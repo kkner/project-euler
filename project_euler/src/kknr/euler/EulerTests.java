@@ -1,92 +1,14 @@
 package kknr.euler;
 
-import static kknr.euler.Answers.E01_ANS;
-import static kknr.euler.Answers.E01_ANS_TOY;
-import static kknr.euler.Answers.E01_PRM;
-import static kknr.euler.Answers.E01_PRM_TOY;
-import static kknr.euler.Answers.E02_ANS;
-import static kknr.euler.Answers.E03_ANS;
-import static kknr.euler.Answers.E03_ANS_TOY;
-import static kknr.euler.Answers.E03_PRM;
-import static kknr.euler.Answers.E03_PRM_TOY;
-import static kknr.euler.Answers.E04_ANS;
-import static kknr.euler.Answers.E04_ANS_TOY;
-import static kknr.euler.Answers.E04_PRM;
-import static kknr.euler.Answers.E04_PRM_TOY;
-import static kknr.euler.Answers.E05_ANS;
-import static kknr.euler.Answers.E05_ANS_TOY;
-import static kknr.euler.Answers.E05_PRM;
-import static kknr.euler.Answers.E05_PRM_TOY;
-import static kknr.euler.Answers.E06_ANS;
-import static kknr.euler.Answers.E06_ANS_TOY;
-import static kknr.euler.Answers.E06_PRM;
-import static kknr.euler.Answers.E06_PRM_TOY;
-import static kknr.euler.Answers.E07_ANS;
-import static kknr.euler.Answers.E08_ANS;
-import static kknr.euler.Answers.E08_ANS_TOY;
-import static kknr.euler.Answers.E08_PRM;
-import static kknr.euler.Answers.E08_TOY_PRM;
-import static kknr.euler.Answers.E09_ANS;
-import static kknr.euler.Answers.E10_ANS;
-import static kknr.euler.Answers.E10_PRM;
-import static kknr.euler.Answers.E11_ANS;
-import static kknr.euler.Answers.E11_PRM;
-import static kknr.euler.Answers.E12_ANS;
-import static kknr.euler.Answers.E13_ANS;
-import static kknr.euler.Answers.E14_ANS;
-import static kknr.euler.Answers.E15_ANS;
-import static kknr.euler.Answers.E16_ANS;
-import static kknr.euler.Answers.E17_ANS;
-import static kknr.euler.Answers.E18_ANS;
-import static kknr.euler.Answers.E19_ANS;
-import static kknr.euler.Answers.E20_ANS;
-import static kknr.euler.Answers.E21_ANS;
-import static kknr.euler.Answers.E22_ANS;
-import static kknr.euler.Answers.E23_ANS;
-import static kknr.euler.Answers.E24_ANS;
-import static kknr.euler.Answers.E25_ANS;
-import static kknr.euler.Answers.E26_ANS;
-import static kknr.euler.Answers.E27_ANS;
-import static kknr.euler.Answers.E28_ANS;
-import static kknr.euler.Answers.E29_ANS;
-import static kknr.euler.Answers.E30_ANS;
-import static kknr.euler.Answers.E31_ANS;
-import static kknr.euler.Answers.E32_ANS;
-import static kknr.euler.Answers.E33_ANS;
-import static kknr.euler.Answers.E34_ANS;
-import static kknr.euler.Answers.E35_ANS;
-import static kknr.euler.Answers.E36_ANS;
-import static kknr.euler.Answers.E37_ANS;
-import static kknr.euler.Answers.E38_ANS;
-import static kknr.euler.Answers.E39_ANS;
-import static kknr.euler.Answers.E40_ANS;
-import static kknr.euler.Answers.E41_ANS;
-import static kknr.euler.Answers.E42_ANS;
-import static kknr.euler.Answers.E43_ANS;
-import static kknr.euler.Answers.E44_ANS;
-import static kknr.euler.Answers.E45_ANS;
-import static kknr.euler.Answers.E46_ANS;
-import static kknr.euler.Answers.E47_ANS;
-import static kknr.euler.Answers.E48_ANS;
-import static kknr.euler.Answers.E49_ANS;
-import static kknr.euler.Answers.E50_ANS;
-import static kknr.euler.Answers.E51_ANS;
-import static kknr.euler.Answers.E52_ANS;
-import static kknr.euler.Answers.E53_ANS;
-import static kknr.euler.Answers.E54_ANS;
-import static kknr.euler.Answers.E55_ANS;
-import static kknr.euler.Answers.E56_ANS;
-import static kknr.euler.Answers.E57_ANS;
-import static kknr.euler.Answers.E58_ANS;
-import static kknr.euler.Answers.E59_ANS;
-import static kknr.euler.Answers.E60_ANS;
-import static kknr.euler.Answers.E61_ANS;
-import static kknr.euler.Answers.E62_ANS;
+import static kknr.euler.Answers.*;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
+
+import kknr.euler.util.Util;
 
 import kknr.euler.e000.E01;
 import kknr.euler.e000.E01B;
@@ -185,7 +107,7 @@ import kknr.euler.e060.E60;
 import kknr.euler.e060.E60B;
 import kknr.euler.e060.E61;
 import kknr.euler.e060.E62;
-import kknr.euler.util.Util;
+import kknr.euler.e060.E63;
 
 class EulerTests 
 {
@@ -722,5 +644,10 @@ class EulerTests
 	@Test
 	public void e62() {
 		assertEquals(E62_ANS, new E62(false).solve() );
+	}
+
+	@Test
+	public void e63() {
+		assertEquals(E63_ANS, new E63(false).solve() );
 	}
 }
