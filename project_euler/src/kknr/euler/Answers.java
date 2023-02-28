@@ -104,4 +104,12 @@ public class Answers
 	static final int E69_ANS = 510510;
 	static final int E70_ANS = 8319823;
 	static final int E71_ANS = 428570;	
+
+	static final int E72_PRM_TOY1 = 8;
+	static final long E72_ANS_TOY1 = 21;
+	static final int E72_PRM_TOY2 = 10;
+	static final long E72_ANS_TOY2 = 31;
+	static final int E72_PRM = 1_000_000;
+	static final long E72_ANS = 303963552391L;
+
 }

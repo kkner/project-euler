@@ -122,6 +122,9 @@ import kknr.euler.e070.E70Study1;
 import kknr.euler.e070.E70Study2;
 import kknr.euler.e070.E70b;
 import kknr.euler.e070.E71;
+import kknr.euler.e070.E72;
+import kknr.euler.e070.E72B;
+import kknr.euler.e070.E72Study1;
 
 class EulerTests 
 {
@@ -737,5 +740,26 @@ class EulerTests
 	@Test 
 	public void e71() {
 		assertEquals(E71_ANS , new E71(false).solve());
+	}
+
+	@Test
+	public void e72() {
+		assertEquals(E72_ANS_TOY1, new E72(false).solve(E72_PRM_TOY1));
+		assertEquals(E72_ANS_TOY2, new E72(false).solve(E72_PRM_TOY2));
+		assertEquals(E72_ANS, new E72(false).solve(E72_PRM));
+	}
+
+	@Test
+	public void e72Solve2() {
+		assertEquals(E72_ANS_TOY1, new E72Study1(false).solve(E72_PRM_TOY1));
+		assertEquals(E72_ANS_TOY2, new E72Study1(false).solve(E72_PRM_TOY2));
+//		assertEquals(E72_ANS, new E72Study1(true).solve(E72_PRM));
+	}
+
+	@Test
+	public void e72b() {
+		assertEquals(E72_ANS_TOY1, new E72B(false).solve(E72_PRM_TOY1));
+		assertEquals(E72_ANS_TOY2, new E72B(false).solve(E72_PRM_TOY2));
+		assertEquals(E72_ANS, new E72B(false).solve(E72_PRM));
 	}
 }
