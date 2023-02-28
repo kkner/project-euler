@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -628,6 +629,107 @@ public class Util
 	{
 		return sumOfDigits(f.toString());
 	}
+
+    // TODO add test
+    // TODO add comment
+	public static int sumArr(int[] arr)
+	{
+		int sum = 0;
+		
+		for(int x: arr) 
+			sum += x;
+		
+		return sum;
+	}
+
+    // TODO add test
+	/** 
+	 * Create a duplicate of the given list with one element "skip" removed 
+	 * @param unused
+	 * @param skip
+	 * @return
+	 */	
+	public static <T> List<T> removeOneElem(Collection<T> src, T skip)
+	{
+		assert skip != null;
+		assert !src.isEmpty();
+		
+		List<T> result = new ArrayList<T>();
+		
+		for(T t: src) 
+		{
+			if (skip != t) 
+			{
+				result.add(t);
+			}
+		}
+		
+		assert result.size() == src.size() - 1; // element skip must exist in src
+		
+		return result;
+	}
+
+    // TODO add test
+	/** 
+	 * Create a duplicate of the given list with the element at skipIndex removed. 
+	 * @param unused
+	 * @param skip
+	 * @return
+	 */
+	public static <T> List<T> removeOneElem(Collection<T> src, int skipIndex)
+	{
+		assert skipIndex >= 0 && skipIndex < src.size();
+		assert !src.isEmpty();
+		
+		List<T> result = new ArrayList<T>();
+		
+		int index = 0;
+		
+		for(T t: src) 
+		{
+			if (skipIndex != index) 
+			{
+				result.add(t);
+			}
+			index++;
+		}
+		
+		assert result.size() == src.size() - 1; // element skip must exist in src
+				
+		return result;
+	}
+
+	// TODO add test
+    /**
+     * Generate the nth square number.
+     * @param n
+     * @return
+     */
+    public static long square(int n)
+    {
+    	long result = n;
+    	result *= n;
+    	return result;
+    }
+
+	// TODO add test
+    // TODO add comment
+    public static long heptagonal(int n)
+    {
+    	long result = n;
+    	result *= 5 * n - 3;
+    	result /= 2;
+    	return result;
+    }
+
+	// TODO add test
+    // TODO add comment
+    public static long octagonal(int n)
+    {
+    	long result = n;
+    	result *= 3 * n - 2;
+    	return result;
+    }
 
 	public static Comparator<Integer> comp = (x, y) -> Integer.compare(x, y);
 	public static Comparator<Integer> reverseComp = (x, y) -> Integer.compare(y, x);	
