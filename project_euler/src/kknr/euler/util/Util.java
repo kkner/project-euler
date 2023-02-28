@@ -575,6 +575,59 @@ public class Util
 		}
 	}
 
+	// TODO add test
+    // TODO add comment
+	public static String reverse(String s) {
+		return new StringBuilder(s).reverse().toString();
+	}
+
+    // TODO add test
+    // TODO add comment
+	public static BigInteger reverse(BigInteger c) {
+		return new BigInteger(reverse(c.toString()));	
+	}
+
+
+    // TODO add test
+    // TODO add comment
+	public static boolean isPalindromic(String s)
+	{		
+		for(int i = 0; i < s.length() / 2; i++) {
+			if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+    // TODO add test
+    // TODO add comment
+	public static boolean isPalindromic(BigInteger c)
+	{
+		return isPalindromic(c.toString());
+	}
+
+    // TODO add test
+    // TODO add comment
+	public static int sumOfDigits(String s)
+	{
+		int sum = 0;
+		
+		for(char c: s.toCharArray()) {
+			int d = c - '0';
+			assert d >= 0 && d <= 9;
+			sum += d;
+		}
+		
+		return sum;
+	}
+	
+    // TODO add test
+    // TODO add comment
+	public static int sumOfDigits(BigInteger f)
+	{
+		return sumOfDigits(f.toString());
+	}
 
 	public static Comparator<Integer> comp = (x, y) -> Integer.compare(x, y);
 	public static Comparator<Integer> reverseComp = (x, y) -> Integer.compare(y, x);	
