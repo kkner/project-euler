@@ -13,6 +13,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import kknr.euler.prime.Primes3;
+
 public class Util 
 {
 	public static final BigInteger B0 = BigInteger.ZERO;
@@ -744,6 +746,14 @@ public class Util
 		return p.toString().length();
 	}
 
+	// TODO add test
+	// TODO add comment
+	public static List<Integer> generatePrimes(long maxPrimePlus1) {
+		long[] sieve = Primes3.makeSieve(maxPrimePlus1 - 1);
+		return Primes3.collect(sieve, maxPrimePlus1 - 1, null);
+	}	
+
 	public static Comparator<Integer> comp = (x, y) -> Integer.compare(x, y);
-	public static Comparator<Integer> reverseComp = (x, y) -> Integer.compare(y, x);	
+	public static Comparator<Integer> reverseComp = (x, y) -> Integer.compare(y, x);
+
 }

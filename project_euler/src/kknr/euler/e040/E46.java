@@ -4,6 +4,7 @@ import java.util.List;
 
 import kknr.euler.Solution;
 import kknr.euler.prime.Primes3;
+import kknr.euler.util.Util;
 
 public class E46 extends Solution
 {
@@ -26,8 +27,7 @@ public class E46 extends Solution
 
 	public long solve()
 	{	
-		long[] sieve = Primes3.makeSieve(LIMIT);
-		primesList = Primes3.collect(sieve, LIMIT, null);
+		primesList = Util.generatePrimes(LIMIT + 1);
 		
 		writable[1] = true;		
 		markAllPrimes();
