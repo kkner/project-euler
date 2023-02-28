@@ -11,12 +11,14 @@ public class E06Brute extends Solution
 	public long solve(int lim)
 	{	
 		int sum1 = 0;
+		
 		for(int counter = 1; counter <= lim; counter++)
 		{
 			sum1 += counter;
 		}
 		
 		int sum2 = 0;
+		
 		for(int counter = 1; counter <= lim; counter++)
 		{
 			sum2 += counter * counter;
