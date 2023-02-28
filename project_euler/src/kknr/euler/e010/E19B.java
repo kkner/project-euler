@@ -48,7 +48,8 @@ public class E19B extends Solution
 
 	private void updateMonthLength()
 	{
-		monthLen = E19.MONTH_LENGTHS[month];			
+		monthLen = E19.MONTH_LENGTHS[month];	
+		
 		if (month == 1 && E19.isLeap(year)) 
 		{
 			monthLen++;
