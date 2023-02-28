@@ -139,6 +139,7 @@ import kknr.euler.e070.E78;
 import kknr.euler.e070.E78B;
 import kknr.euler.e070.E79;
 import kknr.euler.e080.E80;
+import kknr.euler.e080.E81;
 
 class EulerTests 
 {
@@ -852,5 +853,10 @@ class EulerTests
 	@Test
 	public void e80() {		
 		assertEquals(E80_ANS, new E80(false).solve());
+	}
+
+	@Test
+	public void e81() {		
+		assertEquals(E81_ANS, new E81(false).solve());
 	}
 }
