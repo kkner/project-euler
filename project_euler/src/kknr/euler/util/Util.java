@@ -183,6 +183,12 @@ public class Util
 		
 		return dst;
 	}
+	
+    // TODO add comment
+	public static String[] toArrayS(List<String> li) 
+	{
+		return li.toArray(new String[li.size()]);
+	}
 
 	/**
 	 * Convert list of ints to array of ints.

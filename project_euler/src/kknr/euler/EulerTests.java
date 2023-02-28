@@ -113,6 +113,7 @@ import kknr.euler.e060.E64B;
 import kknr.euler.e060.E65;
 import kknr.euler.e060.E66;
 import kknr.euler.e060.E66B;
+import kknr.euler.e060.E67;
 
 class EulerTests 
 {
@@ -679,5 +680,10 @@ class EulerTests
 	@Test
 	public void e66b() {
 		assertEquals(E66_ANS, new E66B(false).solve() );
+	}
+
+	@Test
+	public void e67() throws IOException {
+		assertEquals(E67_ANS, new E67(false).solve() );
 	}
 }

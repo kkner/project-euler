@@ -103,6 +103,15 @@ public class UtilTest
 	}
 	
 	@Test
+	public void toArrayString() {
+		List<String> li = new ArrayList<String>();
+		li.add("5");
+		li.add("8");
+		li.add("7");
+		assertArrayEquals(new String[] {"5", "8", "7"}, Util.toArrayS(li));
+	}
+	
+	@Test
 	public void toArrayInt()
 	{
 		List<Integer> li = new ArrayList<Integer>();
