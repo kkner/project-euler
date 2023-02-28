@@ -111,6 +111,8 @@ import kknr.euler.e060.E63;
 import kknr.euler.e060.E64;
 import kknr.euler.e060.E64B;
 import kknr.euler.e060.E65;
+import kknr.euler.e060.E66;
+import kknr.euler.e060.E66B;
 
 class EulerTests 
 {
@@ -667,5 +669,15 @@ class EulerTests
 	@Test
 	public void e65() {
 		assertEquals(E65_ANS, new E65(false).solve() );
+	}
+
+	@Test
+	public void e66() {
+		assertEquals(E66_ANS, new E66(false).solve() );
+	}
+
+	@Test
+	public void e66b() {
+		assertEquals(E66_ANS, new E66B(false).solve() );
 	}
 }
