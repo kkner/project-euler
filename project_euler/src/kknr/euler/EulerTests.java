@@ -154,6 +154,12 @@ import kknr.euler.e080.E88;
 import kknr.euler.e080.E89;
 import kknr.euler.e090.E90;
 import kknr.euler.e090.E91;
+import kknr.euler.e090.E92;
+import kknr.euler.e090.E93A;
+import kknr.euler.e090.E93A2;
+import kknr.euler.e090.E93B;
+import kknr.euler.e090.E93C;
+import kknr.euler.e090.E93D;
 
 class EulerTests 
 {
@@ -957,4 +963,34 @@ class EulerTests
 		assertEquals(E91_ANS, new E91(false).solve());
 	}
 
+	@Test
+	public void e92() {		
+		assertEquals(E92_ANS, new E92(false).solve());
+	}
+	
+	@Test
+	public void e93a() {		
+		assertEquals(E93_ANS, new E93A(false).solve());
+	}
+	
+	@Test
+	public void e93a2() {		
+		assertEquals(E93_ANS, new E93A2(false).solve());
+	}
+	
+	@Test
+	public void e93b() {		
+		assertEquals(E93_ANS, new E93B(false).solve());
+	}
+	
+	@Test
+	public void e93c() {		
+		assertEquals(E93_ANS, new E93C(false).solve());
+	}
+	
+	@Test
+	public void e93d() {		
+		assertEquals(E93_ANS, new E93D(false).solve());
+	}
+	
 }
