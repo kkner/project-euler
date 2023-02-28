@@ -143,6 +143,8 @@ import kknr.euler.e080.E81;
 import kknr.euler.e080.E82;
 import kknr.euler.e080.E83;
 import kknr.euler.e080.E84;
+import kknr.euler.e080.E85;
+import kknr.euler.e080.E85b;
 
 class EulerTests 
 {
@@ -887,4 +889,14 @@ class EulerTests
 		assertEquals(E84.CellType.CC3, E84.addToCellNo(E84.CellType.E1, 12));
 	}	
 	
+	@Test
+	public void e85() {		
+		assertEquals(E85_ANS, new E85(false).solve());
+	}
+
+	@Test
+	public void e85b() {		
+		assertEquals(E85_ANS, new E85b(false).solve());
+	}
+
 }
