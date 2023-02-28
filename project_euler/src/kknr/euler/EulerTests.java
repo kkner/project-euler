@@ -125,6 +125,9 @@ import kknr.euler.e070.E71;
 import kknr.euler.e070.E72;
 import kknr.euler.e070.E72B;
 import kknr.euler.e070.E72Study1;
+import kknr.euler.e070.E73;
+import kknr.euler.e070.E73B;
+import kknr.euler.e070.E74;
 
 class EulerTests 
 {
@@ -761,5 +764,20 @@ class EulerTests
 		assertEquals(E72_ANS_TOY1, new E72B(false).solve(E72_PRM_TOY1));
 		assertEquals(E72_ANS_TOY2, new E72B(false).solve(E72_PRM_TOY2));
 		assertEquals(E72_ANS, new E72B(false).solve(E72_PRM));
+	}
+
+	@Test
+	public void e73() {
+		assertEquals(E73_ANS, new E73(false).solve());
+	}
+
+	@Test
+	public void e73B() {
+		assertEquals(E73_ANS, new E73B(false).solve());
+	}
+
+	@Test 
+	public void e74() {
+		assertEquals(E74_ANS, new E74(false).solve());
 	}
 }

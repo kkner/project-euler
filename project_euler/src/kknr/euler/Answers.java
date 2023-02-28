@@ -112,4 +112,6 @@ public class Answers
 	static final int E72_PRM = 1_000_000;
 	static final long E72_ANS = 303963552391L;
 
+	static final int E73_ANS = 7295372;
+	static final int E74_ANS = 402;
 }
