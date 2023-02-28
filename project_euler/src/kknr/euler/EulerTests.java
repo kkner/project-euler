@@ -151,6 +151,7 @@ import kknr.euler.e040.E44B;
 import kknr.euler.e040.E45;
 import kknr.euler.e040.E46;
 import kknr.euler.e040.E47;
+import kknr.euler.e040.E47B;
 import kknr.euler.util.Util;
 
 class EulerTests 
@@ -593,5 +594,10 @@ class EulerTests
 	@Test
 	public void e47() {
 		assertEquals(E47_ANS, new E47(false).solve() );
+	}
+
+	@Test
+	public void e47B() {
+		assertEquals(E47_ANS, new E47B(false).solve() );
 	}
 }
