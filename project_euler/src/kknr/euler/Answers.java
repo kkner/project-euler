@@ -103,4 +103,5 @@ public class Answers
 	static final long E68_ANS = 6531031914842725L;
 	static final int E69_ANS = 510510;
 	static final int E70_ANS = 8319823;
+	static final int E71_ANS = 428570;	
 }
