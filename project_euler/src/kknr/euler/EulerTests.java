@@ -63,6 +63,7 @@ import static kknr.euler.Answers.E40_ANS;
 import static kknr.euler.Answers.E41_ANS;
 import static kknr.euler.Answers.E42_ANS;
 import static kknr.euler.Answers.E43_ANS;
+import static kknr.euler.Answers.E44_ANS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
@@ -142,6 +143,8 @@ import kknr.euler.e040.E40C;
 import kknr.euler.e040.E41B;
 import kknr.euler.e040.E42;
 import kknr.euler.e040.E43;
+import kknr.euler.e040.E44;
+import kknr.euler.e040.E44B;
 import kknr.euler.util.Util;
 
 class EulerTests 
@@ -558,4 +561,17 @@ class EulerTests
 	public void e43() {
 		assertEquals(E43_ANS, new E43(false).solve() );		
 	}	
+
+	// @Test
+	public void e44() {
+		// This solution takes 20 seconds.
+		assertEquals(E44_ANS, new E44(false).solve() );
+	}
+
+	@Test
+	public void e44B() {
+		// This is faster but not a proved way to reach the solution.
+		assertEquals(E44_ANS, new E44B(false).solve() );
+	}
+
 }

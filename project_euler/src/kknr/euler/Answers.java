@@ -76,4 +76,5 @@ public class Answers
 	static final int E41_ANS = 7652413;
 	static final int E42_ANS = 162;
 	static final long E43_ANS = 16695334890L;
+	static final int E44_ANS = 5482660;
 }

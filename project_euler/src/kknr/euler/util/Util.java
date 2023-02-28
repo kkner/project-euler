@@ -505,7 +505,52 @@ public class Util
 		
 		return true;
 	}
-	
+
+    // TODO add test
+    /**
+     * Calculates pentagonal number n.
+     */
+	public static long pentagonal(long n)
+	{
+		return n * (3 * n - 1) / 2;
+	}
+
+    // TODO add test
+    // TODO add comment
+	public static boolean isPentagonal(long p)
+	{	
+		// Solve quadratic equation.
+		
+		// final double a = 1.5, b = -0.5, c = -p;
+		
+		//double disc = b * b - 4 * a * c;
+		double disc = 0.25 + 6 * p;
+		if (disc < 0) 
+			return false;
+		
+		double sqrtdisc = Math.sqrt(disc);
+		
+		//double r1 = (-b + sqrtdisc) / (2 * a);
+		double r1 = (0.5 + sqrtdisc) / 3;
+		if (r1 > 0) {
+			long r = (long)(Math.floor(r1));
+			if (r >= 0 && pentagonal(r) == p) {
+				return true;
+			}
+		}
+		
+		//double r2 = (-b - sqrtdisc) / (2 * a);
+		double r2 = (0.5 - sqrtdisc) / 3;
+		if (r2 > 0) {
+			long r = (long)(Math.floor(r2));
+			if (r >= 0 && pentagonal(r) == p) {
+				return true;
+			}
+		}
+		
+		return false;			
+	}
+
 	public static Comparator<Integer> comp = (x, y) -> Integer.compare(x, y);
 	public static Comparator<Integer> reverseComp = (x, y) -> Integer.compare(y, x);	
 }
