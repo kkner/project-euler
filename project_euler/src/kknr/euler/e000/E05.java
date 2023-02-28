@@ -23,5 +23,4 @@ public class E05 extends Solution
 		
 		return prod;
 	}
-
 }
