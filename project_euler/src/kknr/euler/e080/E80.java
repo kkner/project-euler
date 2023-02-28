@@ -14,6 +14,7 @@ public class E80 extends Solution
 	{		
 		int sum = 0;
 		
+		// TODO Make 100 a constant.
 		for(int i = 1; i <= 100; i++)
 		{			
 			double sqrt = Math.sqrt(i);
@@ -37,8 +38,10 @@ public class E80 extends Solution
 			for(int j = 0; j < 100; j++) 
 			{
 				char c = str.charAt(j);
+				
 				int d = c - '0';
 				assert d >= 0 && d <= 9; 
+				
 				sum += d;
 			}
 			

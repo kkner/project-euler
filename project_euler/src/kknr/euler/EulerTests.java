@@ -152,6 +152,8 @@ import kknr.euler.e080.E86_mathblogdk;
 import kknr.euler.e080.E87;
 import kknr.euler.e080.E88;
 import kknr.euler.e080.E89;
+import kknr.euler.e090.E90;
+import kknr.euler.e090.E91;
 
 class EulerTests 
 {
@@ -945,4 +947,14 @@ class EulerTests
 		assertEquals(E89_ANS, new E89(false).solve());
 	}
 	
+	@Test
+	public void e90() {		
+		assertEquals(E90_ANS, new E90(false).solve());
+	}
+
+	@Test
+	public void e91() {		
+		assertEquals(E91_ANS, new E91(false).solve());
+	}
+
 }
