@@ -160,6 +160,10 @@ import kknr.euler.e090.E93A2;
 import kknr.euler.e090.E93B;
 import kknr.euler.e090.E93C;
 import kknr.euler.e090.E93D;
+import kknr.euler.e090.E94;
+import kknr.euler.e090.E94B;
+import kknr.euler.e090.E94Study1;
+import kknr.euler.e090.E94Study2;
 
 class EulerTests 
 {
@@ -993,4 +997,28 @@ class EulerTests
 		assertEquals(E93_ANS, new E93D(false).solve());
 	}
 	
-}
+
+//	@Test
+	public void e94Study1() {
+		// 4 seconds
+		assertEquals(E94_ANS, new E94Study1(true).study1());
+	}
+	
+//	@Test
+	public void e94Test1() {
+		// 7.121 seconds
+		assertEquals(E94_ANS, new E94Study2(true).study2());
+	}
+
+	@Test
+	public void e94() {	
+		// 2.8 seconds
+		assertEquals(E94_ANS, new E94(false).solve());
+	}
+		
+	@Test
+	public void e94B() {		
+		// 0.06 seconds
+		assertEquals(E94_ANS, new E94B(false).solve());
+	}
+	}
