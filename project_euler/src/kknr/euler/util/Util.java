@@ -132,7 +132,6 @@ public class Util
 		return n * (n + 1) * (2 * n + 1) / 6;
 	}	
 
-    // TODO add test
 	/**
 	 * Given a prime count n, calculate an integer guaranteed 
 	 * to be greater than the nth prime.
