@@ -62,6 +62,7 @@ import static kknr.euler.Answers.E39_ANS;
 import static kknr.euler.Answers.E40_ANS;
 import static kknr.euler.Answers.E41_ANS;
 import static kknr.euler.Answers.E42_ANS;
+import static kknr.euler.Answers.E43_ANS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
@@ -140,6 +141,7 @@ import kknr.euler.e040.E40B;
 import kknr.euler.e040.E40C;
 import kknr.euler.e040.E41B;
 import kknr.euler.e040.E42;
+import kknr.euler.e040.E43;
 import kknr.euler.util.Util;
 
 class EulerTests 
@@ -551,4 +553,9 @@ class EulerTests
 			tested++;
 		}
 	}
+
+	@Test
+	public void e43() {
+		assertEquals(E43_ANS, new E43(false).solve() );		
+	}	
 }
