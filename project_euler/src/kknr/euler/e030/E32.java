@@ -34,7 +34,7 @@ public class E32 extends Solution
 		// Iterate over every permutation:
 		do {
 			interpret(comb, found);
-		} while(E24.nextPerm(comb));
+		} while(Util.nextPerm(comb, Util.comp));
 
 		return sum(found);
 	}

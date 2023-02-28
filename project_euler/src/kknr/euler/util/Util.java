@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -302,7 +303,7 @@ public class Util
 			// Multiply with term's denominator.
 			den *= prime - 1;
 			
-			long g = Util.gcd(num, den);
+			long g = gcd(num, den);
 			num /= g;
 			den /= g;
 		}
@@ -459,4 +460,52 @@ public class Util
 		}
 		
 		return counts;
-	}}
+	}
+	
+	// TODO test
+	/**
+	 * Replace the contents of the given array with the next lexicographical permutation 
+	 * @param a The array to be modified.
+	 * @return true if successful, false if a was already the last possible permutation.
+	 */
+	public static boolean nextPerm(int[] a, Comparator<Integer> comp)
+	{		
+		final int len = a.length;
+		
+		assert len >= 1;
+		
+		if (len == 1) 
+		{
+			return false;
+		}
+		
+		// Find tail:
+		int t = len - 1;
+		while(t > 0 && comp.compare(a[t - 1], a[t]) >= 0)
+		{
+			t--;
+		}
+		
+		// No more permutations can be generated. 
+		if (t == 0)
+		{
+			return false;
+		}
+		
+		// Find swap point with linear search:
+		int b = len - 1;		
+		while(comp.compare(a[t - 1], a[b]) >= 0)
+		{
+			b--;
+		}
+		
+		exch(a, t - 1, b);
+		
+		reverse(a, t, len - 1);
+		
+		return true;
+	}
+	
+	public static Comparator<Integer> comp = (x, y) -> Integer.compare(x, y);
+	public static Comparator<Integer> reverseComp = (x, y) -> Integer.compare(y, x);	
+}
