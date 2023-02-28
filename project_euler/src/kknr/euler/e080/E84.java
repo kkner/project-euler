@@ -37,6 +37,7 @@ public class E84 extends Solution
 		int cellCounters[] = new int[40];
 		int rollCount;		
 		
+		// TODO make 10M a constant
 		for(rollCount = 0; rollCount < 10_000_000; rollCount++) 
 		{			
 			format("move %d, currently at %s\n", rollCount, currentCell);
@@ -54,16 +55,22 @@ public class E84 extends Solution
 		//printReport(cellCounters, rollCount);
 		
 		int best[] = {-1, -1, -1};
+		
 		for(int i = 0; i < 40; i++)
 		{
-			if (best[0] == -1 || cellCounters[i] > cellCounters[best[0]]) {
+			if (best[0] == -1 || cellCounters[i] > cellCounters[best[0]]) 
+			{
 				best[2] = best[1];
 				best[1] = best[0];
 				best[0] = i;
-			} else if (best[1] == -1 || cellCounters[i] > cellCounters[best[1]]) {
+			}
+			else if (best[1] == -1 || cellCounters[i] > cellCounters[best[1]]) 
+			{
 				best[2] = best[1];
 				best[1] = i;
-			} else if (best[2] == -1 || cellCounters[i] > cellCounters[best[2]]) {
+			}
+			else if (best[2] == -1 || cellCounters[i] > cellCounters[best[2]]) 
+			{
 				best[2] = i;
 			}						
 		}
@@ -72,7 +79,8 @@ public class E84 extends Solution
 		{
 			System.out.println("----");
 			
-			for(int i = 0 ; i < 3; i++) {
+			for(int i = 0 ; i < 3; i++) 
+			{
 				int b = best[i];
 				String name = CellType.values()[b].toString();
 				int count = cellCounters[b];
@@ -89,10 +97,15 @@ public class E84 extends Solution
 	protected void printReport(int[] cellCounters, int rollCount)
 	{
 		if (!doPrint())
+		{
 			return;
+		}
 		
 		println("cell frequencies");
-		for(int i = 0; i < 40; i++) {			
+		
+		// TODO Make 40 a constant. 
+		for(int i = 0; i < 40; i++) 
+		{
 			String name = CellType.values()[i].toString();
 			int count = cellCounters[i];
 			double freq = count / (double)rollCount; 
@@ -100,10 +113,14 @@ public class E84 extends Solution
 		}
 	}
 	
-	public static String modalString(int no) {
-		if (no < 10) {
+	public static String modalString(int no) 
+	{
+		if (no < 10) 
+		{
 			return "0" + no;
-		} else {
+		} 
+		else 
+		{
 			return Integer.toString(no);				
 		}
 	}
@@ -113,9 +130,11 @@ public class E84 extends Solution
 		rollDice();
 		printDice();
 				
-		if (isDiceDouble()) {
+		if (isDiceDouble()) 
+		{
 			doubleCount++;
-			if (doubleCount == 3) {
+			if (doubleCount == 3) 
+			{
 				doubleCount = 0;
 				println("3 consecutive doubles... goto jail");
 				return JAIL;
@@ -129,8 +148,10 @@ public class E84 extends Solution
 		if (isCellCH(cell)) cell = draw_ch(cell);
 		if (isCellCC(cell)) cell = draw_cc(cell);
 		
-		if (cell == G2J) 
+		if (cell == G2J)
+		{
 			cell = JAIL;
+		}
 		
 		return cell; 
 	}
@@ -139,7 +160,8 @@ public class E84 extends Solution
 	{		
 		int card = rng.nextInt(16) + 1;
 		
-		switch(card) {
+		switch(card) 
+		{
 			case 1: return GO;
 			case 2: return JAIL;
 			default: return currentCell;
@@ -150,7 +172,8 @@ public class E84 extends Solution
 	{
 		int card = rng.nextInt(16) + 1;
 		
-		switch(card) {
+		switch(card) 
+		{
 			case 1: return GO;
 			case 2: return JAIL;
 			case 3: return C1;
@@ -166,7 +189,8 @@ public class E84 extends Solution
 	}
 
 	private static CellType nextUtility(CellType cell) {
-		switch(cell) {
+		switch(cell) 
+		{
 			case CH2: return U2;
 			case CH1: 
 			case CH3: return U1;
@@ -175,7 +199,8 @@ public class E84 extends Solution
 	}
 
 	private static CellType nextRailway(CellType cell) {
-		switch(cell) {
+		switch(cell) 
+		{
 			case CH1: return R2;
 			case CH2: return R3;
 			case CH3: return R1;

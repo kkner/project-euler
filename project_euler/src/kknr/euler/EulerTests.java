@@ -877,4 +877,14 @@ class EulerTests
 	public void e84() {		
 		assertEquals(E84_ANS, new E84(false).solve());
 	}
+
+	@Test 
+	public void e84_addToCellNo()
+	{
+		assertEquals(E84.CellType.T1, E84.addToCellNo(E84.CellType.GO, 4));
+		assertEquals(E84.CellType.H1, E84.addToCellNo(E84.CellType.GO, -3));
+		assertEquals(E84.CellType.C3, E84.addToCellNo(E84.CellType.CC2, -3));
+		assertEquals(E84.CellType.CC3, E84.addToCellNo(E84.CellType.E1, 12));
+	}	
+	
 }
