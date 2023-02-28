@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 
@@ -128,4 +129,23 @@ public class UtilTest
 		assertEquals(96889010407L, Util.ipow(7, 13));
 	}
 	
+	@Test
+	public void countDPF()
+	{
+		Map<Integer, Integer> pf = Util.countDPF(2*2*2*3*3);
+		
+		assertEquals(2, pf.size());
+		assertEquals(3, (int)pf.get(2));
+		assertEquals(2, (int)pf.get(3));
+	}
+
+	@Test
+	public void countDPFL()
+	{
+		Map<Long, Integer> pf = Util.countDPF(2L*2L*2L*3L*3L);
+		
+		assertEquals(2, pf.size());
+		assertEquals(3, (long)pf.get(2L));
+		assertEquals(2, (long)pf.get(3L));
+	}
 }

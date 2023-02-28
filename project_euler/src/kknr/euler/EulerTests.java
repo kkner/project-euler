@@ -48,6 +48,7 @@ import static kknr.euler.Answers.E25_ANS;
 import static kknr.euler.Answers.E26_ANS;
 import static kknr.euler.Answers.E27_ANS;
 import static kknr.euler.Answers.E28_ANS;
+import static kknr.euler.Answers.E29_ANS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
@@ -103,6 +104,8 @@ import kknr.euler.e020.E26;
 import kknr.euler.e020.E27;
 import kknr.euler.e020.E28;
 import kknr.euler.e020.E28B;
+import kknr.euler.e020.E29;
+import kknr.euler.e020.E29B;
 import kknr.euler.e020.e23.E23A;
 import kknr.euler.e020.e23.E23B;
 import kknr.euler.e020.e23.E23C;
@@ -392,5 +395,15 @@ class EulerTests
 	@Test
 	public void e28b() {
 		assertEquals(E28_ANS, new E28B(false).solve() );
+	}
+
+	@Test
+	public void e29() {
+		assertEquals(E29_ANS, new E29(false).solve() );
+	}
+
+	@Test
+	public void e29B() {
+		assertEquals(E29_ANS, new E29B(false).solve() );
 	}
 }

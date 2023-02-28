@@ -420,4 +420,43 @@ public class Util
 		
 		return result;
 	}
-}
+
+    // TODO add comment
+	/**
+	 * Uses the Factorize class.
+	 */
+	public static Map<Integer, Integer> countDPF(int x)
+	{		
+		Map<Integer, Integer> counts = new HashMap<Integer, Integer>();
+		
+		FactorsFixed fac = new FactorsFixed(x);
+		
+		while(fac.has()) {
+			long p = fac.adv();
+			assert(p <= Integer.MAX_VALUE);
+			Integer count = counts.get((int)p);
+			count = count == null ? 0 : count;
+			counts.put((int)p, count + 1);
+		}
+		
+		return counts;
+	}
+    // TODO add comment
+	/**
+	 * Uses the Factorize class.
+	 */
+	public static Map<Long, Integer> countDPF(long x)
+	{		
+		Map<Long, Integer> counts = new HashMap<Long, Integer>();
+		
+		FactorsFixed fac = new FactorsFixed(x);
+		
+		while(fac.has()) {
+			long p = fac.adv();
+			Integer count = counts.get(p);
+			count = count == null ? 0 : count;
+			counts.put(p, count + 1);
+		}
+		
+		return counts;
+	}}
