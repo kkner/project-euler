@@ -165,6 +165,8 @@ import kknr.euler.e090.E94B;
 import kknr.euler.e090.E94Study1;
 import kknr.euler.e090.E94Study2;
 import kknr.euler.e090.E95;
+import kknr.euler.e090.E97;
+import kknr.euler.e090.E97B;
 import kknr.euler.e090.e96.E96;
 
 class EulerTests 
@@ -1033,4 +1035,17 @@ class EulerTests
 	public void e96() {		
 		assertEquals(E96_ANS, new E96(false).solve());
 	}
+
+	@Test
+	public void e97() {		
+		// 1.3 second
+		assertEquals(E97_ANS, new E97(false).solve());
+	}
+
+	@Test
+	public void e97B() {		
+		// 0.17 seconds
+		assertEquals(E97_ANS, new E97B(false).solve());
+	}
+	
 }
