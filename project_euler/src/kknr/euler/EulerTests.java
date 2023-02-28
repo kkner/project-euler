@@ -61,6 +61,7 @@ import static kknr.euler.Answers.E38_ANS;
 import static kknr.euler.Answers.E39_ANS;
 import static kknr.euler.Answers.E40_ANS;
 import static kknr.euler.Answers.E41_ANS;
+import static kknr.euler.Answers.E42_ANS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
@@ -138,6 +139,7 @@ import kknr.euler.e040.E40;
 import kknr.euler.e040.E40B;
 import kknr.euler.e040.E40C;
 import kknr.euler.e040.E41B;
+import kknr.euler.e040.E42;
 import kknr.euler.util.Util;
 
 class EulerTests 
@@ -524,5 +526,29 @@ class EulerTests
 	@Test
 	public void e41B() {
 		assertEquals(E41_ANS, new E41B(false).solve() );
+	}
+
+	@Test
+	public void e42() throws IOException {
+		assertEquals(E42_ANS, new E42(false).solve() );
+	}
+
+	// @Test
+	public void E42_isTriangleSimple()
+	{
+		// Test method with every integer <= T(100000) 
+		
+		long tested = 1;
+		for(long n = 1; n < 100000; n++)
+		{
+			long t = n * (n + 1) / 2;
+			for (; tested < t; tested++) 
+			{
+				assertEquals(false, E42.isTriangleSimple(tested));
+			}
+			assertEquals(true, E42.isTriangleSimple(tested));
+			
+			tested++;
+		}
 	}
 }
