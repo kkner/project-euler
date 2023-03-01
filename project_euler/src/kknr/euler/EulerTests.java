@@ -168,6 +168,7 @@ import kknr.euler.e090.E95;
 import kknr.euler.e090.E97;
 import kknr.euler.e090.E97B;
 import kknr.euler.e090.E98;
+import kknr.euler.e090.E99;
 import kknr.euler.e090.e96.E96;
 
 class EulerTests 
@@ -1052,6 +1053,11 @@ class EulerTests
 	@Test
 	public void e98() throws IOException {		
 		assertEquals(E98_ANS, new E98(false).solve());
+	}
+
+	@Test
+	public void e99() throws IOException {
+		assertEquals(E99_ANS, new E99(false).solve() );
 	}
 
 }
