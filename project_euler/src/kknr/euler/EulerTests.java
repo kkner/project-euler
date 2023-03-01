@@ -1,15 +1,12 @@
 package kknr.euler;
 
 import static kknr.euler.Answers.*;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.util.HashMap;
 
 import org.junit.jupiter.api.Test;
-
-import kknr.euler.util.Util;
 
 import kknr.euler.e000.E01;
 import kknr.euler.e000.E01B;
@@ -170,6 +167,8 @@ import kknr.euler.e090.E97B;
 import kknr.euler.e090.E98;
 import kknr.euler.e090.E99;
 import kknr.euler.e090.e96.E96;
+import kknr.euler.e100.E100;
+import kknr.euler.util.Util;
 
 class EulerTests 
 {
@@ -1060,4 +1059,8 @@ class EulerTests
 		assertEquals(E99_ANS, new E99(false).solve() );
 	}
 
+	@Test
+	public void e100() {
+		assertEquals(E100_ANS, new E100(false).solve() );
+	}	
 }
